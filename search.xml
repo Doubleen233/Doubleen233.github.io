@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[饲料调配 Feed Ratios]]></title>
+    <url>%2F2019%2F07%2F26%2FFeed-Ratios%2F</url>
+    <content type="text"><![CDATA[前记：参考 https://www.luogu.org/blog/Roy/2729tijie题目描述农夫约翰从来只用调配得最好的饲料来喂他的奶牛。饲料用三种原料调配成：大麦，燕麦和小麦。他知道自己的饲料精确的配比，在市场上是买不到这样的饲料的。他只好购买其他三种混合饲料（同样都由三种麦子组成），然后将它们混合，来调配他的完美饲料。 给出三组整数，表示 大麦：燕麦：小麦 的比例，找出用这三种饲料调配 x：y：z 的饲料的方法。 例如，给出目标饲料 3：4：5 和三种饲料的比例： 1:2:3 3:7:1 2:1:2 你必须编程找出使这三种饲料用量最少的方案，要是不能用这三种饲料调配目标饲料，输出“NONE”。“用量最少”意味着三种饲料的用量（整数）的和必须最小。 对于上面的例子，你可以用8份饲料1，1份饲料2，和5份饲料3，来得到7份目标饲料： 8(1:2:3) + 1(3:7:1) + 5(2:1:2) = (21:28:35) = 7(3:4:5) 表示饲料比例的整数以及目标饲料的都是小于100的非负整数。表示各种饲料的份数的整数，都小于100。一种混合物的比例不会由其他混合物的比例直接相加得到。 输入Line 1: 三个用空格分开的整数，表示目标饲料 Line 2..4: 每行包括三个用空格分开的整数，表示农夫约翰买进的饲料的比例 输出输出文件要包括一行，这一行要么有四个整数，要么是“NONE”。前三个整数表示三种饲料的份数，用这样的配比可以得到目标饲料。第四个整数表示混合三种饲料后得到的目标饲料的份数。 样例输入3 4 51 2 33 7 12 1 2 样例输出8 1 5 7 提示所有数据在int范围 来源USACO Training Section 3.2 方法一：枚举1.枚举在看到题目后，很容易找到关键词–每个饲料都不超过100，也就是说，即使对于枚举三个饲料的大小也能拿到满分，时间复杂度O(n^3) 2.特判0的情况（1）暴力特判，将每一个饲料为0的全部枚举出来，大力if就好了 （2）柯西不等式 3.参考代码123456789101112for(register int i=1;i&lt;=300;i++)//枚举总数 for(register int j=0;j&lt;=i;j++)//枚举其中两个饲料 for(register int k=0;k&lt;=i-j;k++) &#123; int x=j*a[1][1].u+k*a[1][2].u+(i-j-k)*a[1][3].u;//算三个饲料的总数 int y=j*a[2][1].u+k*a[2][2].u+(i-j-k)*a[2][3].u; int z=j*a[3][1].u+k*a[3][2].u+(i-j-k)*a[3][3].u; if(x&gt;=a[1][4].u&amp;&amp;y&gt;=a[2][4].u&amp;&amp;z&gt;=a[3][4].u/*判断一定是小于要求的答案，否则不成立*/&amp;&amp;a[1][4].u*y==a[2][4].u*x&amp;&amp;a[3][4].u*y==a[2][4].u*z)&#123;//大力if判断是否成立 printf("%d %d %d %d\n",j,k,i-j-k,x/a[1][4].u); std::exit(0);//第一个找到的一定是最小的 &#125; &#125; 1234#define squ(x) ((x)*(x))if ((squ(a)+squ(b)+squ(c))*(squ(x)+squ(y)+squ(z))==squ(a*x+b*y+c*z))&#123; //do something...&#125;//柯西不等式中n==3的特例 方法二：拓展-&gt;高斯消元因为题目很容易转化成一个三元一次方程，高斯消元求一个解的lcm就好了 请移步http://lzoi.win:8008/problem.php?id=3813 LZOJ3813 谢谢观看！]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>高斯消元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[最佳字符串]]></title>
+    <url>%2F2019%2F07%2F26%2Fzuijiazifuchuan%2F</url>
+    <content type="text"><![CDATA[题目描述给定长度为N (1 ≤ N ≤ 500,000) 的字符串S, 要构造一个长度为N的字符串T. 反复进行如下任意操作: 从S的头部删除一个字符, 放入T的尾部; 从S的尾部删除一个字符, 放入T的尾部; 目标是要构造字典序尽可能小的字符串T. 输入第1行：一个整数N，表示字符串长度 第2行..N+1行：每行一个字符，由大写字母组成（‘A’–‘Z’） 输出输出最小字典序，由大写字母组成（‘A’–‘Z’），每行若满80个字符，换行输出 样例输入6ACDBCB 样例输出ABCBCD 提示来源USACO07DEC O(n^2)算法对于这道题很容易想到贪心取头和尾的字符串，用一个双指针时间 当头尾字符串相等时，暴力向前面扫，哪个字符串小就选哪边 代码1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;cstdio&gt;const int M=500005;char s[M],ans[M];int tot,top; int n;int main()&#123;// freopen("line.in","r",stdin);// freopen("line.out","w",stdout); scanf("%d",&amp;n); for(register int i=1;i&lt;=n;i++)&#123; char ch=getchar(); while(ch=='\n'||ch==' ') ch=getchar();//读入特判回车 s[i]=ch; &#125; int l=1,r=n; while(tot&lt;=n)&#123; if(s[l]&lt;s[r]) ans[++tot]=s[l],l++;/左边的小，选左边，指针右移 else if(s[l]&gt;s[r]) ans[++tot]=s[r],r--;//右边的小，选右边，指针左移 else&#123; //特殊处理相等情况 if(l==r) ans[++tot]=s[l];//特判一下是否是只有一个了，那么就不用继续操作了 else&#123; int ll=l+1,rr=r-1; bool flg=false; while(ll&lt;=rr) //用另一个指针比对第一个不同的字符在哪边 if(s[ll]&lt;s[rr])&#123; flg=true; break; &#125; else if(s[ll]&gt;s[rr]) break; else ll++,rr--; if(flg) ans[++tot]=s[l++];//如果是左边小就选左边，否则右边 else ans[++tot]=s[r--]; &#125; &#125; &#125; for(register int i=1;i&lt;=n;i++)&#123; putchar(ans[i]); if(i%80==0) puts(""); &#125; return 0;&#125; 不过当数据是回文或者只有一个字符就会退化成n^2 这题看到数据范围，虽然数据很水，但O(n^2)肯定过不了 正解 O(n log n) 算法对于正解，考虑字符串哈希。但是哈希我们只能对比出两个字符串的相等性，而且正确性与hash的模数息息相关 那怎么办呢？ 可以在字符串hash值上二分，因为对于前面的解法，瓶颈就是在找到第一个不同的字符，我们只需找到第一个当前首尾不同的字符，而这就满足了单调性。 我们举个例子： AAABGAAA 对于这个字符串，他当前首尾的hash值肯定是“一样，一样，一样，不一样，不一样….” 所以二分到“B,G” 这个点，比较即可 hash O(n) 处理 O(1) 获取hash值 完毕！！！！！！！！！ 优越性：正确性高，快速，可以代替后缀数组 不优越性：不能直接比较两个字符串的大小 代码12345678910111213141516171819202122232425262728293031323334353637383940414243#include&lt;cstdio&gt;typedef unsigned long long ll;const int M=500005；char s[M],ans[M];ll hsh1[M],hsh2[M],pw[M]; //hash值用unsigned long long 可以自动取模 int tot,top; int n;bool check(int l,int r,int x,int y)&#123; ll a=hsh1[r]-hsh1[l-1]*pw[r-l+1],b=hsh2[x]-hsh2[y+1]*pw[y-x+1]; //这一步相当于取出r~l/x~y的hash值 return a==b;&#125;int find(int x,int y)&#123; int l=0,r=n-x,anss=0; //二分第一个不同的位置 while(l&lt;=r)&#123; int mid=(l+r)&gt;&gt;1; if(check(x,x+mid,y-mid,y)) l=mid+1;//判断尾部和头部的字符串是否相等 else r=mid-1,anss=mid; &#125; return anss;&#125;int main()&#123; scanf("%d",&amp;n); pw[0]=1; for(register int i=1;i&lt;=n;i++)&#123; char ch=getchar(); while(ch=='\n'||ch==' ') ch=getchar(); s[i]=ch; hsh1[i]=hsh1[i-1]*27+s[i]-'A',pw[i]=pw[i-1]*27; //预处理出27的次方 &#125; for(register int i=n;i&gt;=1;i--) hsh2[i]=hsh2[i+1]*27+s[i]-'A'; int l=1,r=n; while(tot&lt;=n)&#123; int len=find(l,r);//二分 if(s[l+len]&lt;s[r-len]) ans[++tot]=s[l++]; //和上面一样的双指针 else ans[++tot]=s[r--]; &#125; for(register int i=1;i&lt;=n;i++)&#123; putchar(ans[i]); if(i%80==0) puts(""); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>OI</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[test picture]]></title>
+    <url>%2F2019%2F07%2F25%2Ftest-picture%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <tags>
+        <tag>test</tag>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[莫比乌斯反演前置知识]]></title>
+    <url>%2F2019%2F06%2F07%2Fdu_jiao_shai_he_mobius_fanyan_1%2F</url>
+    <content type="text"><![CDATA[莫比乌斯反演前置知识学习参考： https://acfcacfca.blog.luogu.org/dls-tql https://www.cnblogs.com/peng-ym/p/8647856.html https://www.cnblogs.com/gzy-cjoier/p/9686787.html 函数知识完全积性函数$$\epsilon(n) = [n=1], I(n) = 1, id(n) = n$$ 积性函数：对于任意互质的整数 $a,b$ 有 $f(ab)=f(a)f(b)$ 则称 $f(x)$ 的数论函数。 完全积性函数：对于任意整数 $a,b$ 有 $f(ab)=f(a)f(b)$ 的数论函数。 狄利克雷卷积含义：$(f*g)(n)=\sum_{d|n}^{}f(d)g(\frac{d}{n})$ 单位元： $\epsilon$ （即 $f*\epsilon=f$ ） $$μ*I=ϵ $$ $$\varphi * I = id$$ $$\mu * id = \varphi$$ 莫比乌斯函数定义和性质：定义：1.当 $d=1$ 时，$μ(d)=1$ 2.当$d=\prod_{i=1}^k pi$且$pi$为互异素数时$\mu(d)$ = $(-1)^k$ 3.只要当$d$含有任何质因子的幂次大于等于$2$，则函数值为$0$ 性质：1.$\sum_{d|n}\frac{\mu(d)}{d}=\frac{\phi(n)}{n}$ 2.$\sum_{d|n}\mu(d)=[n=1]$]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>莫比乌斯反演</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[李超线段树学习笔记]]></title>
+    <url>%2F2019%2F05%2F10%2Fli_chao_xian_duan_shu%2F</url>
+    <content type="text"><![CDATA[李超线段树学习笔记参考/学习/引用：http://www.cnblogs.com/mangoyang/p/9979465.html 适用范围 一般来说set，cdq能完成的题目，李超线段树都可以完成。 一般题型都为在一个平面上维护几条线段，然后求最值（维护斜率） 即李超线段树是解决最优势线段问题，支持插入一条线段，查询单点最优势点。线段树上的每一个端点存的都是这个区间内的最优势线段。 基本思路考虑当前有一个线段树上的区间，要在这个区间里插入一条线段并维护答案，不妨分以下几类讨论： 1.如果当前这个区间还没有线段或者新加入的线段完全覆盖原来的线段，那么新加入的线段一定替换原来的线段 2.如果当前新加入的线段被原来的线段完全覆盖，那么这条新加入的线段一定不会再有用了。 3.将新加入的线段和原来的线段求交，将交所在的那半边较劣的线段下放到对应的儿子，更新区间中点的最高的线段。 此时维护的相当于是标记永久化的若干个线段，求答案就是将 $k$ 对应路径上的标记取最优线段，复杂度瓶颈所在的第三种情况每次都只会走一个儿子下放，所以从插入一条线段的复杂度是 $O(logn)$ ，由于要区间修改要在 $logn$ 个节点上插入线段，所以总复杂度 $O(nlog^{2}n)$ 具体实现方法设我们插入的线段/直线所在直线的直线解析式为$y=kx+b$ 以线段树的每一个区间表示$x$的值的区间，然后每一个区间维护的都是$y$的最值 插入方法就和普通线段树一样，找出一些区间能覆盖这一线段/直线，然后比较最值大小。 比较最值的方法就是对于一段区间分类讨论： 1.如果当前这个区间还没有线段或者新加入的线段完全覆盖原来的线段，那么新加入的线段一定替换原来的线段，区间比较方法就是比较区间的$l$和$r$带进去的值 2.如果当前新加入的线段被原来的线段完全覆盖，那么这条新加入的线段一定不会再有用了。 3.将新加入的线段和原来的线段求交，以区间的$mid$为分割线，自然有一半部分是两条直线不相交的，所以就不用处理，而另一部分就放到儿子的地方，做预备军 4.查询就是将儿子和当前直线取个最值 例题[HEOI2013]Segment题目描述要求在平面直角坐标系下维护两个操作： 在平面上加入一条线段。记第 i 条被插入的线段的标号为 i 给定一个数 k,询问与直线 x = k 相交的线段中，交点最靠上的线段的编号。 模板，就是用刚才的方法解决，如果看不懂上面的方法的话就用这道题理解，我也是这样过来的，浮点数的精度也是很重要的 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;const int M=2e5+5;const int mod1=39989,mod2=1e9;const double eps=1e-6;int lastans=0,tot=0;struct node&#123;double k,b; int id;&#125;;inline double dbmax(double a,double b)&#123;return a&gt;b?a:b;&#125;inline double dbabs(double a)&#123;return a&gt;0?a:-a;&#125;struct SegmentTree&#123; node s[M&lt;&lt;2]; bool b[M]; void pushdown(int u,int l,int r,node now) &#123; if(!b[u])&#123;s[u]=now,b[u]=true;&#125; double l1=l*now.k+now.b,l2=l*s[u].k+s[u].b; double r1=r*now.k+now.b,r2=r*s[u].k+s[u].b; if(l1&lt;=l2&amp;&amp;r1&lt;=r2) return ; if(l1&gt;=l2&amp;&amp;r1&gt;=r2) return (void)(s[u]=now); double pos=(now.b-s[u].b)/(s[u].k-now.k);//求交点 int mid=(l+r)&gt;&gt;1; if(pos&lt;=mid) pushdown(u&lt;&lt;1,l,mid,r1&gt;r2?s[u]:now); else pushdown(u&lt;&lt;1|1,mid+1,r,l1&gt;l2?s[u]:now); if((l1&gt;l2&amp;&amp;pos&gt;=mid)||(r1&gt;r2&amp;&amp;pos&lt;mid)) s[u]=now; &#125; void insert(int u,int l,int r,int x,int y,node now) &#123; if(l&gt;=x&amp;&amp;r&lt;=y)&#123; pushdown(u,l,r,now); return ; &#125; int mid=(l+r)&gt;&gt;1; if(x&lt;=mid) insert(u&lt;&lt;1,l,mid,x,y,now); if(y&gt;mid) insert(u&lt;&lt;1|1,mid+1,r,x,y,now); &#125; node query(int u,int l,int r,int pos) &#123; if(l==r) return b[u]?s[u]:(node)&#123;0.0,0.0,0&#125;; int mid=(l+r)&gt;&gt;1; node now; if(pos&lt;=mid) now=query(u&lt;&lt;1,l,mid,pos); else now=query(u&lt;&lt;1|1,mid+1,r,pos); if(!b[u]) return now; double tmp1=pos*now.k+now.b,tmp2=pos*s[u].k+s[u].b; if(!now.id||(tmp1&lt;tmp2||(dbabs(tmp1-tmp2)&lt;eps&amp;&amp;s[u].id&lt;now.id))) now=s[u]; return now; &#125;&#125;;SegmentTree t;inline int read()&#123; int x=0,f=1; char ch=0; while(!isdigit(ch)) f=(ch=='-'?-1:1),ch=getchar(); while(isdigit(ch)) x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48),ch=getchar(); return x*f;&#125;inline void initx(int &amp;x)&#123;x=(x+lastans-1)%mod1+1;&#125;inline void inity(int &amp;y)&#123;y=(y+lastans-1)%mod2+1;&#125;int main()&#123; int n=read(); for(register int i=1;i&lt;=n;i++) &#123; int op=read(); if(op==0)&#123; int x=read(); initx(x); printf("%d\n",lastans=t.query(1,1,mod1,x).id); &#125; else&#123; int x0=read(),y0=read(),x1=read(),y1=read(); initx(x0); inity(y0); initx(x1); inity(y1); if(x0&gt;x1) swap(x0,x1),swap(y0,y1); if(x0==x1)&#123; t.insert(1,1,mod1,x0,x1,(node)&#123;0.0,dbmax(y0,y1),++tot&#125;); continue; &#125; double k=(double)(y1-y0)/(double)(x1-x0),b=(double)y1-x1*k; t.insert(1,1,mod1,x0,x1,(node)&#123;k,b,++tot&#125;); &#125; &#125; return 0;&#125; 推荐习题[JSOI2008]Blue Mary开公司 [SDOI2016]游戏~~~~]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>线段树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[斜率优化dp略解]]></title>
+    <url>%2F2019%2F03%2F20%2Fxie_lv_you_hua_dp%2F</url>
+    <content type="text"><![CDATA[斜率优化模板题：luogu P3195 想法普通dp方程：$dp[i]=min(dp[j]+(sum[i]-sum[j]+i-j-L-1)^2)$ 我们惊奇的发现，这个dp式子是 $O(n^2)$ 的，那肯定会TLE，那怎么办呢？ 考虑斜率优化 解法设 $s[i]=$ 前缀和 $1~i$ 设 $a[i]=s[i]+i$ $b[i]=s[i]+i+L+1$ $fuck$ 为斜率 原式化为：$dp[i]=dp[j]+(a[i]-b[j])^2$ 经过推论和化简，很容易得到 $dp[i]=dp[j]+a[i]^2−2 \cdot a[i] \cdot b[j]+b[j]^2$ 所以： $2 \cdot a[i]=\frac{dp[j]+b[j]^2+a[i]^2-dp[i]}{b[j]}$ 想法：单调队列维护凸包 因为 $2 \cdot a[i]$ 是斜率，所以我们只要维护了 $2 \cdot a[i]$ 单调递增，就可以维护成下凸包。 表示存的可能为答案的点。因为我们要维护下凸包的性质，必须满足get(p[tail-1],p[tail])&gt;get(p[tail],i) 我们根据斜率式子，队首必须满足get(p[head],p[head+1])&lt;2A[i] 因为斜率越小越优，所以每次选队首。 大致可以有如下代码： $$while(fuck(p_{head},p_{head+1})&lt;2*a[i]) head++;$$ $$while(fuck(p_{tail},p_{head+1})&lt;fuck(p_{tail-1},p_{tail})) head++;$$ 所以代码如下： 1234567891011121314151617181920212223242526272829303132333435#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;queue&gt;using namespace std;const int M=50005;double s[M],dp[M];int q[M],n,L;inline int read()&#123; int x=0; char ch=0; while(!isdigit(ch)) ch=getchar(); while(isdigit(ch)) x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48),ch=getchar(); return x;&#125;double a(int i)&#123;return s[i]+i;&#125;double b(int i)&#123;return a(i)+1+L;&#125;double x(int i)&#123;return b(i);&#125;double y(int i)&#123;return dp[i]+b(i)*b(i);&#125;double fuck(int j,int k)&#123;return (y(j)-y(k))/(x(j)-x(k));&#125;int main()&#123; n=read(),L=read(); for(register int i=1;i&lt;=n;i++)&#123; scanf("%lf",&amp;s[i]); s[i]+=s[i-1]; &#125; int head=1,tail=1; for(register int i=1;i&lt;=n;i++)&#123; while(head&lt;tail&amp;&amp;(fuck(q[head],q[head+1])&lt;2.00*a(i))) head++; dp[i]=dp[q[head]]+(a(i)-b(q[head]))*(a(i)-b(q[head])); while(head&lt;tail&amp;&amp;(fuck(q[tail],i)&lt;fuck(q[tail-1],q[tail]))) tail--; q[++tail]=i; &#125; printf("%lld\n",(long long)dp[n]); return 0;&#125; 总结这道模板题只是斜率单调上升的情况，而其他不单调的解法更复杂，这里只略提一下，以后再细讲。 1.当斜率不单调无法pop队首时，就考虑二分或者三分查找队列中的最优解。 二分做法：假设你要在上凸包上二分找斜率为 $k$ 的切线。取中间的 $mid$ 号点，如果 $mid+1$ 存在且与 $mid$ 点的斜率小于 $k$ ，则 $l=mid+1$ ；如果 $mid−1$ 存在且与 $mid$ 点的斜率大于$k$，则 $r=mid−1$ ；如果上面两条都不满足，$mid$ 就是切点。 2.同时而如果 $b[j]$ 不单调(即横坐标不单调)怎么办呢？还能不能用斜率优化呢？ 答案是可以的，我们需要使用CDQ分治或者splay来解决这个问题。 优秀的题目1.luogu P3628 [APIO2010]特别行动队 2.luogu P3994 高速公路 3.bzoj1096[ZJOI2007]仓库建设 4.bzoj1597[USACP2008 Mar]土地购买 5.bzoj3156 防御准备 6.bzoj3675[Apio2014] 序列分割 7.bzoj3437 小P的牧场 8.bzoj4518[SDOI2016] 征途]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>dp</tag>
+        <tag>斜率优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Splay用来快速排序？？]]></title>
+    <url>%2F2019%2F03%2F09%2Fsplay_to_sort%2F</url>
+    <content type="text"><![CDATA[Splay用来快速排序？？题目:https://www.luogu.org/problemnew/show/P1177我们知道，二叉查找树是一种快速而有序的树。也就是说，我们可以利用它来做排序，那最后应输出的答案是什么呢？不难想，左子树一定小于右子树，那最后排序出来的结果便是它的中序遍历。 初始代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;const int M=200005;int fa[M],s[M][2],num[M],root,n,sz;inline int read()&#123; int x=0,f; char ch=0; while(!isdigit(ch)) f=(ch=='-'?-1:1),ch=getchar(); while(isdigit(ch)) x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48),ch=getchar(); return x*f;&#125;inline void print(int x)&#123; if(x&lt;0) x=-x,putchar('-'); if(x&gt;9) print(x/10); putchar(x%10+48);&#125;inline void write(int x)&#123;print(x);putchar(' ');&#125;void setson(int son,int f,int w)&#123; if(son) fa[son]=f; if(f) s[f][w]=son;&#125;void insert(int x)&#123; if(!root)&#123; root=++sz; num[sz]=x; return ; &#125; int u=root,ff=0; while(u) &#123; ff=u; u=s[u][x&gt;num[u]]; &#125; sz++; num[sz]=x; setson(sz,ff,x&gt;num[ff]);&#125;void dfs(int p)&#123; if(!p) return; dfs(s[p][0]); write(num[p]); dfs(s[p][1]);&#125;int main()&#123; int n=read(); for(register int i=1;i&lt;=n;i++)&#123; insert(read()); &#125; dfs(root); return 0;&#125; 但一定会发生这样的事： 啥！不是说二叉查找树是很快的吗？？仔细想，原来可能有这样一种数据本身即是有序的，这将二分查找树退化成了一个链表！！！！ emmm怎么办呢 这时，splay就登场啦 我们可以用splay将二分查找树变得稍微平衡些（这里不细讲splay，不懂splay的可以先去学splay） 这样就可以AC了 AC代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283#include&lt;cstdio&gt;#include&lt;iostream&gt;using namespace std;const int M=200005;int fa[M],s[M][2],num[M],root,n,sz;inline int read()&#123; int x=0,f; char ch=0; while(!isdigit(ch)) f=(ch=='-'?-1:1),ch=getchar(); while(isdigit(ch)) x=(x&lt;&lt;1)+(x&lt;&lt;3)+(ch^48),ch=getchar(); return x*f;&#125;inline void print(int x)&#123; if(x&lt;0) x=-x,putchar('-'); if(x&gt;9) print(x/10); putchar(x%10+48);&#125;inline void write(int x)&#123;print(x);putchar(' ');&#125;inline int ws(int x)&#123; return s[fa[x]][1]==x;&#125;void setson(int son,int f,int w)&#123; if(son) fa[son]=f; if(f) s[f][w]=son;&#125;void rot(int x)&#123; int f=fa[x]; int ff=fa[f]; int w=ws(x); int wf=ws(f); int p=s[x][!w]; setson(p,f,w); setson(x,ff,wf); setson(f,x,!w);&#125;void splay(int x)&#123;// splay:将x节点旋转为根/* 1.Zig Step 2.Zig_Zig Step 3.Zig_Zag Step*/ for(;fa[x];rot(x))&#123; if(fa[fa[x]]&amp;&amp;ws(fa[x])==ws(x)) rot(fa[x]); &#125; root=x;&#125;void insert(int x)&#123; if(!root)&#123; root=++sz; num[sz]=x; return ; &#125; int u=root,ff=0; while(u) &#123; ff=u; u=s[u][x&gt;num[u]]; &#125; sz++; num[sz]=x; setson(sz,ff,x&gt;num[ff]); splay(sz);&#125;void dfs(int p)&#123; if(!p) return; dfs(s[p][0]); write(num[p]); dfs(s[p][1]);&#125;int main()&#123; int n=read(); for(register int i=1;i&lt;=n;i++)&#123; insert(read()); &#125; dfs(root); return 0;&#125; PS:这比stl堆快多了！！！]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>平衡树</tag>
+        <tag>排序</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Test and celebrate]]></title>
+    <url>%2F2019%2F03%2F09%2F001%2F</url>
+    <content type="text"><![CDATA[我的Blog建好了QwQ]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+</search>
