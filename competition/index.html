@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">赛事聚合 | Doubleen&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="https://cdn.luogu.com.cn/upload/image_hosting/r1j6hg2h.png">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" href="/css/sharejs.css">
+  <link rel="stylesheet" href="/css/competition.css" media="all">
+  <link rel="stylesheet" href="/css/contests.css" media="all">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Doubleen's Blog";
+  mashiro_option.author_name = "Doubleen's Blog";
+  mashiro_option.site_url = "https://doubleen233.github.io";
+  mashiro_option.v_appId = "";
+  mashiro_option.v_appKey = "";
+  mashiro_option.mathjax = "1";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "/images/custom/bg-rain.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop ">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://doubleen233.github.io">
+          <img src="/images/custom/avatar-shiori.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>为世界上所有的美好而战</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/Doubleen233" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/5547217466" target="_blank" class="social-github" title="sina">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="2475851832@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono"></span>
+            <span class="shironeko">Doubleen&#39;s Blog</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/competition/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-trophy faa-shake" aria-hidden="true"></i>
+                    赛事
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/contests/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-code faa-shake" aria-hidden="true"></i>
+                    比赛
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/about/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="pattern-center-blank"></div>
+<div id="content" class="site-content competition-content">
+  <div id="competition-app" class="competition-page" data-data-url="/competition/data.json">
+
+    <header class="cp-hero">
+      <div class="cp-hero-main">
+        <span class="cp-hero-kicker"><i class="fa fa-trophy" aria-hidden="true"></i> COMPETITION HUB</span>
+        <h1>赛事聚合</h1>
+        <p>汇集 HarmonyOS、华为云、GitCode 与公开赛事平台的竞赛信息。已过滤其他高校的校内赛，仅保留中山大学校内赛与公开赛事；默认按“即将截止优先”排序，支持列表、日历、级别、状态与类型筛选。</p>
+        <div class="cp-hero-actions">
+          <button type="button" class="cp-btn cp-btn-primary" id="cp-add-manual">
+            <i class="fa fa-plus" aria-hidden="true"></i> 手动录入
+          </button>
+          <button type="button" class="cp-btn cp-btn-ghost" id="cp-export">
+            <i class="fa fa-download" aria-hidden="true"></i> 导出 JSON
+          </button>
+        </div>
+      </div>
+      <div class="cp-hero-stats" aria-label="赛事统计">
+        <div class="cp-stat">
+          <strong id="cp-stat-open">--</strong>
+          <span>报名中</span>
+        </div>
+        <div class="cp-stat">
+          <strong id="cp-stat-soon">--</strong>
+          <span>7 天内截止</span>
+        </div>
+        <div class="cp-stat">
+          <strong id="cp-stat-total">--</strong>
+          <span>全部赛事</span>
+        </div>
+        <div class="cp-stat cp-stat-wide">
+          <strong id="cp-stat-updated">--</strong>
+          <span>数据更新</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="cp-sources" id="cp-sources" aria-label="数据来源"></div>
+
+    <div class="cp-viewbar">
+      <div class="cp-tabs" role="tablist" aria-label="视图切换">
+        <button type="button" class="cp-tab is-active" data-view="list" role="tab" aria-selected="true">
+          <i class="fa fa-th-large" aria-hidden="true"></i> 列表视图
+        </button>
+        <button type="button" class="cp-tab" data-view="calendar" role="tab" aria-selected="false">
+          <i class="fa fa-calendar" aria-hidden="true"></i> 日历视图
+        </button>
+      </div>
+      <p class="cp-viewbar-note"><i class="fa fa-info-circle" aria-hidden="true"></i> 默认按“即将截止优先”排序</p>
+    </div>
+
+    <!-- 列表视图 -->
+    <section class="cp-view" id="cp-list-view" aria-label="赛事列表">
+      <div class="cp-filter">
+        <div class="cp-filter-head">
+          <h2><i class="fa fa-filter" aria-hidden="true"></i> 筛选赛事</h2>
+          <button type="button" class="cp-link-btn" id="cp-reset">重置筛选</button>
+        </div>
+        <div class="cp-filter-grid">
+          <label class="cp-field cp-field-search">
+            <span>关键词</span>
+            <span class="cp-input-wrap">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="search" id="cp-search" placeholder="搜索赛事名称、主办方、标签…" autocomplete="off">
+            </span>
+          </label>
+          <label class="cp-field">
+            <span>时间范围</span>
+            <select id="cp-time">
+              <option value="all">全部时间</option>
+              <option value="7">7 天内截止</option>
+              <option value="30">30 天内截止</option>
+              <option value="90">90 天内截止</option>
+              <option value="month">本月截止</option>
+              <option value="ended">已截止报名</option>
+            </select>
+          </label>
+          <label class="cp-field">
+            <span>赛事级别</span>
+            <select id="cp-level"><option value="all">全部级别</option></select>
+          </label>
+          <label class="cp-field">
+            <span>赛事状态</span>
+            <select id="cp-status"><option value="all">全部状态</option></select>
+          </label>
+          <label class="cp-field">
+            <span>赛事类型</span>
+            <select id="cp-type"><option value="all">全部类型</option></select>
+          </label>
+        </div>
+        <div class="cp-active-filters" id="cp-active-filters" hidden></div>
+      </div>
+
+      <div class="cp-toolbar">
+        <p class="cp-result" id="cp-result">正在加载赛事…</p>
+        <label class="cp-sort">
+          排序
+          <select id="cp-sort">
+            <option value="default">即将截止优先</option>
+            <option value="deadline">报名截止从早到晚</option>
+            <option value="start">报名开始从早到晚</option>
+            <option value="name">名称 A → Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="cp-grid" id="cp-grid" aria-live="polite"></div>
+      <div class="cp-pagination" id="cp-pagination"></div>
+    </section>
+
+    <!-- 日历视图 -->
+    <section class="cp-view" id="cp-calendar-view" aria-label="赛事日历" hidden>
+      <div class="cp-calendar-toolbar">
+        <div class="cp-cal-nav">
+          <button type="button" class="cp-icon-btn" id="cp-cal-prev" aria-label="上个月">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </button>
+          <h2 id="cp-cal-title">----</h2>
+          <button type="button" class="cp-icon-btn" id="cp-cal-next" aria-label="下个月">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cp-link-btn" id="cp-cal-today">回到本月</button>
+        </div>
+        <div class="cp-cal-filters">
+          <select id="cp-cal-level" aria-label="日历级别筛选"><option value="all">全部级别</option></select>
+          <select id="cp-cal-status" aria-label="日历状态筛选"><option value="all">全部状态</option></select>
+        </div>
+      </div>
+
+      <div class="cp-calendar-shell">
+        <div class="cp-cal-weekdays" aria-hidden="true">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+        </div>
+        <div class="cp-calendar" id="cp-calendar"></div>
+      </div>
+
+      <div class="cp-cal-legend">
+        <span><i class="cp-dot cp-dot-intl"></i>国际级</span>
+        <span><i class="cp-dot cp-dot-national"></i>国家级</span>
+        <span><i class="cp-dot cp-dot-provincial"></i>省级</span>
+        <span><i class="cp-dot cp-dot-school"></i>校级</span>
+        <span><i class="cp-dot cp-dot-enterprise"></i>企业级</span>
+        <span><i class="cp-dot cp-dot-other"></i>其他</span>
+        <span class="cp-legend-note">标记位置为报名截止日</span>
+      </div>
+
+      <div class="cp-agenda">
+        <div class="cp-agenda-head">
+          <h3><i class="fa fa-list-ul" aria-hidden="true"></i> 本月截止赛事</h3>
+          <span id="cp-agenda-count"></span>
+        </div>
+        <div class="cp-agenda-list" id="cp-agenda"></div>
+      </div>
+    </section>
+
+    <footer class="cp-page-foot">
+      <p><i class="fa fa-database" aria-hidden="true"></i> 数据由构建期脚本聚合，页面加载后不再发起跨域抓取。人工录入仅保存在当前浏览器 localStorage。</p>
+      <p>华为云与 GitCode 数据来自官方页面接口；HarmonyOS 来源暂未自动适配，当前使用人工收录。赛事时间与奖项请以主办方官网为准；标记“待核验”的条目来自人工收录。</p>
+    </footer>
+  </div>
+</div>
+
+<!-- 详情弹窗 -->
+<div class="cp-modal" id="cp-detail-modal" hidden>
+  <div class="cp-modal-backdrop" data-cp-close="detail"></div>
+  <div class="cp-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cp-detail-title">
+    <button type="button" class="cp-modal-close" data-cp-close="detail" aria-label="关闭">&times;</button>
+    <div class="cp-modal-body" id="cp-detail-body"></div>
+  </div>
+</div>
+
+<!-- 手动录入弹窗 -->
+<div class="cp-modal" id="cp-manual-modal" hidden>
+  <div class="cp-modal-backdrop" data-cp-close="manual"></div>
+  <div class="cp-modal-panel cp-modal-panel-form" role="dialog" aria-modal="true" aria-labelledby="cp-manual-title">
+    <button type="button" class="cp-modal-close" data-cp-close="manual" aria-label="关闭">&times;</button>
+    <div class="cp-modal-body">
+      <h2 id="cp-manual-title"><i class="fa fa-plus-circle" aria-hidden="true"></i> 手动录入赛事</h2>
+      <p class="cp-modal-desc">动态页面无法自动抓取时，可在这里补充。数据只保存在当前浏览器，导出 JSON 后可提交到 <code>tools/competition/manual.json</code>。</p>
+      <form id="cp-manual-form" class="cp-form">
+        <label class="cp-form-field cp-form-wide">
+          <span>赛事名称 <em>*</em></span>
+          <input type="text" name="name" required maxlength="120" placeholder="例如：HarmonyOS 创新赛 · 2026">
+        </label>
+        <label class="cp-form-field">
+          <span>主办方</span>
+          <input type="text" name="organizer" maxlength="80" placeholder="例如：华为开发者联盟">
+        </label>
+        <label class="cp-form-field">
+          <span>赛事级别</span>
+          <select name="level">
+            <option value="国家级">国家级</option>
+            <option value="国际级">国际级</option>
+            <option value="省级">省级</option>
+            <option value="校级">校级</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+        <label class="cp-form-field">
+          <span>赛事类型</span>
+          <input type="text" name="type" maxlength="40" placeholder="例如：应用开发">
+        </label>
+        <label class="cp-form-field">
+          <span>奖项</span>
+          <input type="text" name="prize" maxlength="100" placeholder="以官网公布为准">
+        </label>
+        <label class="cp-form-field">
+          <span>报名开始</span>
+          <input type="date" name="registrationStart">
+        </label>
+        <label class="cp-form-field">
+          <span>报名截止</span>
+          <input type="date" name="registrationEnd">
+        </label>
+        <label class="cp-form-field">
+          <span>比赛开始</span>
+          <input type="date" name="competitionStart">
+        </label>
+        <label class="cp-form-field">
+          <span>比赛结束</span>
+          <input type="date" name="competitionEnd">
+        </label>
+        <label class="cp-form-field cp-form-wide">
+          <span>详情链接</span>
+          <input type="url" name="url" maxlength="300" placeholder="https://">
+        </label>
+        <label class="cp-form-field cp-form-wide">
+          <span>标签</span>
+          <input type="text" name="tags" maxlength="120" placeholder="用逗号分隔，例如：HarmonyOS, 鸿蒙, 应用开发">
+        </label>
+        <div class="cp-form-actions cp-form-wide">
+          <button type="submit" class="cp-btn cp-btn-primary"><i class="fa fa-save" aria-hidden="true"></i> 保存到本地</button>
+          <button type="button" class="cp-btn cp-btn-ghost" id="cp-manual-export"><i class="fa fa-download" aria-hidden="true"></i> 导出 JSON</button>
+          <button type="button" class="cp-btn cp-btn-danger-ghost" id="cp-manual-clear"><i class="fa fa-trash" aria-hidden="true"></i> 清空本地录入</button>
+        </div>
+      </form>
+      <div class="cp-manual-list-wrap">
+        <h3>已录入 <span id="cp-manual-count">0</span> 条</h3>
+        <div class="cp-manual-list" id="cp-manual-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cp-tooltip" id="cp-tooltip" role="tooltip" hidden></div>
+<div class="cp-toast" id="cp-toast" role="status" aria-live="polite" hidden></div>
+
+<noscript>
+  <p class="cp-noscript">赛事列表需要启用 JavaScript 才能筛选和切换视图。你仍可直接访问各赛事官网获取信息。</p>
+</noscript>
+
+
+<script id="competition-data" type="application/json">{"updatedAt":"2026-11-28T05:47:50.537Z","generatedBy":"tools/competition/fetch-competitions.mjs","sources":[{"id":"thirdplayer","name":"第三方赛事聚合","url":"https://competition.thirdplayer.cn/","status":"ok","count":26,"message":"抓取成功"},{"id":"huaweicloud","name":"华为云开发者大赛","url":"https://developer.huaweicloud.com/competition/list","status":"ok","count":6,"message":"抓取成功（38 条）"},{"id":"harmonyos","name":"华为开发者联盟 · HarmonyOS","url":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","status":"failed","count":0,"message":"接口可访问，但字段为 activityStartTime/signStartTime/activityURL，通用解析器尚未适配；已使用人工收录"},{"id":"gitcode","name":"GitCode 赛事平台","url":"https://competition.gitcode.com/","status":"ok","count":41,"message":"抓取成功（43 条）"},{"id":"manual","name":"人工收录 / 兜底数据","url":"","status":"manual","count":3,"message":"人工收录 3 条（7 条已由官方接口覆盖）"}],"items":[{"id":"tp-1","name":"“互联网+”大学生创新创业大赛","organizer":"教育部","level":"国家级","type":"创新创业","tags":["互联网+","创新创业","创业计划","大创"],"registrationStart":"2026-04-01","registrationEnd":"2026-07-31","competitionStart":"2026-06-01","competitionEnd":"2026-10-31","prize":"以官网公布为准","url":"https://cy.ncss.cn/","participants":"全体高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"gitcode-2074052190424199170","name":"MiniCPM & 昇腾推理优化与应用创新挑战赛","organizer":"OpenBMB、华为昇思 MindSpore、昇腾生态","level":"企业级","type":"昇腾 / AI 算力","tags":["昇腾","MiniCPM-o 4.5 全模态模型","昇腾 NPU","MindSpore","OpenBMB"],"registrationStart":"2026-07-13","registrationEnd":"2026-08-14","competitionStart":"2026-07-13","competitionEnd":"2026-09-04","prize":"¥406,000","url":"https://competition.gitcode.com/competition/2074052190424199170/intro","participants":"149 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2083120580017467393","name":"昇腾Model-Agent模型适配大赛第二季","organizer":"Ascend,AtomGit AI","level":"企业级","type":"昇腾 / AI 算力","tags":["Agent","昇腾","昇腾生态","Model Agent","S2赛季"],"registrationStart":"2026-07-31","registrationEnd":"2026-08-22","competitionStart":"2026-07-31","competitionEnd":"2026-09-21","prize":"¥144,000","url":"https://competition.gitcode.com/competition/2083120580017467393/intro","participants":"281 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2079794808848314369","name":"【华为openJiuwen】基于 JiuwenSwarm 的 Agent 金融分析报告生成","organizer":"中国计算机学会","level":"企业级","type":"AI Agent","tags":["Agent","openJiuwen","CCF","BDCI"],"registrationStart":"2026-06-23","registrationEnd":"2026-08-23","competitionStart":"2026-06-23","competitionEnd":"2026-10-31","prize":"¥50,000","url":"https://competition.gitcode.com/competition/2079794808848314369/intro","participants":"","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"tp-4","name":"全国大学生数学建模竞赛(CUMCM)","organizer":"中国工业与应用数学学会","level":"国家级","type":"数模","tags":["数学建模","CUMCM","国赛","数模"],"registrationStart":"2026-08-01","registrationEnd":"2026-09-01","competitionStart":"2026-09-15","competitionEnd":"2026-09-18","prize":"以官网公布为准","url":"http://www.mcm.edu.cn/","participants":"本科及专科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"gitcode-2088153935645716481","name":"2026HCCL通信库创新大赛_东北赛区","organizer":"CANN开源社区,哈尔滨工业大学","level":"企业级","type":"CANN / 算子","tags":[],"registrationStart":"2026-08-17","registrationEnd":"2026-09-06","competitionStart":"2026-09-07","competitionEnd":"2026-09-24","prize":"¥150,000","url":"https://competition.gitcode.com/competition/2088153935645716481/intro","participants":"104 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2074065063594618882","name":"2026年度中国青年科技创新\"揭榜挂帅\"擂台赛·书生赛道","organizer":"2026 年度中国青年\"揭榜挂帅\"擂台赛书生命题大赛组委会","level":"企业级","type":"AI / 应用开发","tags":["挑战杯","Intern-S 系列模型","全国大学生系列科技学术竞赛"],"registrationStart":"2026-05-30","registrationEnd":"2026-09-15","competitionStart":"2026-05-30","competitionEnd":"2026-11-20","prize":"¥285,000","url":"https://competition.gitcode.com/competition/2074065063594618882/intro","participants":"573 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2087467113271201794","name":"中国电信星辰杯高校AI算子开发挑战赛A组赛道","organizer":"中电信人工智能科技（北京）有限公司,华为","level":"企业级","type":"CANN / 算子","tags":["AI","算子"],"registrationStart":"2026-08-12","registrationEnd":"2026-09-24","competitionStart":"2026-08-12","competitionEnd":"2026-11-30","prize":"¥700,000","url":"https://competition.gitcode.com/competition/2087467113271201794/intro","participants":"372 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2087467207538184194","name":"中国电信星辰杯高校AI算子开发挑战赛B组赛道","organizer":"中电信人工智能科技（北京）有限公司,华为","level":"企业级","type":"CANN / 算子","tags":["AI","算子"],"registrationStart":"2026-08-12","registrationEnd":"2026-09-24","competitionStart":"2026-08-12","competitionEnd":"2026-11-30","prize":"¥700,000","url":"https://competition.gitcode.com/competition/2087467207538184194/intro","participants":"311 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2087467304678264833","name":"中国电信星辰杯高校AI算子开发挑战赛C组赛道","organizer":"中电信人工智能科技（北京）有限公司,华为","level":"企业级","type":"CANN / 算子","tags":["AI","算子"],"registrationStart":"2026-08-12","registrationEnd":"2026-09-24","competitionStart":"2026-08-12","competitionEnd":"2026-11-30","prize":"¥700,000","url":"https://competition.gitcode.com/competition/2087467304678264833/intro","participants":"324 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"tp-7","name":"ACM-ICPC国际大学生程序设计竞赛","organizer":"ACM","level":"国际级","type":"编程算法","tags":["ACM","ICPC","程序设计","算法竞赛","编程"],"registrationStart":"2026-09-01","registrationEnd":"2026-09-30","competitionStart":"2026-10-15","competitionEnd":"2027-04-30","prize":"以官网公布为准","url":"https://icpc.global/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-26","name":"全国大学生GIS应用技能大赛","organizer":"中国地理学会","level":"国家级","type":"综合","tags":["GIS","地理信息","遥感","空间分析"],"registrationStart":"2026-09-01","registrationEnd":"2026-09-30","competitionStart":"2026-11-01","competitionEnd":"2026-11-30","prize":"以官网公布为准","url":"http://www.gisera.com/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"gitcode-2074791206352715777","name":"2026开源鸿蒙大学生创新大赛 · 赛道一：系统与技术创新赛道","organizer":"开源鸿蒙项目群技术指导委员会","level":"企业级","type":"开源鸿蒙","tags":["鸿蒙","开源","开源鸿蒙","大学生创新大赛"],"registrationStart":"2026-07-08","registrationEnd":"2026-09-30","competitionStart":"2026-07-08","competitionEnd":"2026-11-27","prize":"¥300,000","url":"https://competition.gitcode.com/competition/2074791206352715777/intro","participants":"164 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2074795600207065089","name":"2026开源鸿蒙大学生创新大赛 · 赛道二：开源鸿蒙PC专项积分赛","organizer":"开源鸿蒙项目群技术指导委员会","level":"企业级","type":"开源鸿蒙","tags":["鸿蒙","开源","鸿蒙PC","大学生创新大赛","开源鸿蒙"],"registrationStart":"2026-07-08","registrationEnd":"2026-09-30","competitionStart":"2026-07-08","competitionEnd":"2026-11-27","prize":"¥1,020,000","url":"https://competition.gitcode.com/competition/2074795600207065089/intro","participants":"537 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2074797483593228289","name":"2026开源鸿蒙大学生创新大赛 · 赛道三：校园与创新应用赛道","organizer":"开源鸿蒙项目群技术指导委员会","level":"企业级","type":"开源鸿蒙","tags":["鸿蒙","开源","开源鸿蒙","大学生创新大赛"],"registrationStart":"2026-07-08","registrationEnd":"2026-09-30","competitionStart":"2026-07-08","competitionEnd":"2026-11-27","prize":"¥440,000","url":"https://competition.gitcode.com/competition/2074797483593228289/intro","participants":"522 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2090698089366798337","name":"2026开源鸿蒙大学生创新大赛","organizer":"开源鸿蒙项目群技术指导委员会","level":"企业级","type":"开源鸿蒙","tags":["鸿蒙","开源","开源鸿蒙"],"registrationStart":"2026-07-08","registrationEnd":"2026-09-30","competitionStart":"2026-07-08","competitionEnd":"2026-11-27","prize":"¥1,760,000","url":"https://competition.gitcode.com/competition/2090698089366798337/intro","participants":"111 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2079523455267733506","name":"【华为openJiuwen】Agent 职场长程生存与晋升挑战","organizer":"中国计算机学会","level":"企业级","type":"AI Agent","tags":["Agent","openJiuwen","CCF","BDCI"],"registrationStart":"2026-06-23","registrationEnd":"2026-10-02","competitionStart":"2026-06-23","competitionEnd":"2026-10-31","prize":"¥50,000","url":"https://competition.gitcode.com/competition/2079523455267733506/intro","participants":"1 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2090379383571447809","name":"仓颉生态创新开发挑战赛","organizer":"仓颉&AtomGit","level":"企业级","type":"综合","tags":["仓颉","Cangjie"],"registrationStart":"2026-08-21","registrationEnd":"2026-10-07","competitionStart":"2026-08-21","competitionEnd":"2026-10-31","prize":"¥70,000","url":"https://competition.gitcode.com/competition/2090379383571447809/intro","participants":"238 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2079803553561747457","name":"【华为openJiuwen】基于JiuwenSwarm的Agent 科研论文自动生成","organizer":"中国计算机学会","level":"企业级","type":"AI Agent","tags":["Agent","openJiuwen","CCF","BDCI"],"registrationStart":"2026-06-23","registrationEnd":"2026-10-09","competitionStart":"2026-06-23","competitionEnd":"2026-10-31","prize":"¥50,000","url":"https://competition.gitcode.com/competition/2079803553561747457/intro","participants":"1 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2094688057034268674","name":"2026年CANN挑战赛_上合赛区","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-07-21","registrationEnd":"2026-10-16","competitionStart":"2026-07-21","competitionEnd":"2026-11-14","prize":"¥100,000","url":"https://competition.gitcode.com/competition/2094688057034268674/intro","participants":"3191 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2094721134930419714","name":"2026年CANN挑战赛_杭厦赛区","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-07-21","registrationEnd":"2026-10-16","competitionStart":"2026-07-21","competitionEnd":"2026-11-14","prize":"¥100,000","url":"https://competition.gitcode.com/competition/2094721134930419714/intro","participants":"2649 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2094722369343447042","name":"2026年CANN挑战赛_西北赛区","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-07-21","registrationEnd":"2026-10-16","competitionStart":"2026-07-21","competitionEnd":"2026-11-07","prize":"¥100,000","url":"https://competition.gitcode.com/competition/2094722369343447042/intro","participants":"3941 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2094720514798379009","name":"2026年CANN挑战赛_京津东北赛区","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-07-21","registrationEnd":"2026-10-16","competitionStart":"2026-07-21","competitionEnd":"2026-11-07","prize":"¥100,000","url":"https://competition.gitcode.com/competition/2094720514798379009/intro","participants":"5047 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2077655605238501377","name":"2026年CANN挑战赛-统一报名入口","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-07-21","registrationEnd":"2026-10-16","competitionStart":"2026-07-21","competitionEnd":"2026-11-07","prize":"¥500,000","url":"https://competition.gitcode.com/competition/2077655605238501377/intro","participants":"18703 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2094722165106008066","name":"2026年CANN挑战赛_西南赛区","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-07-21","registrationEnd":"2026-10-16","competitionStart":"2026-07-21","competitionEnd":"2026-11-07","prize":"¥100,000","url":"https://competition.gitcode.com/competition/2094722165106008066/intro","participants":"3880 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2100553547670937601","name":"华为云码道 CodeArts AI 编程挑战赛","organizer":"AtomGit","level":"企业级","type":"云 / AI 编程","tags":["华为云","CodeArts","码道","AI","码道CodeArts","应用开发"],"registrationStart":"2026-09-14","registrationEnd":"2026-10-18","competitionStart":"2026-09-14","competitionEnd":"2026-10-18","prize":"¥7,500","url":"https://competition.gitcode.com/competition/2100553547670937601/intro","participants":"175 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"tp-12","name":"“外研社·国才杯”英语系列大赛","organizer":"外语教学与研究出版社","level":"国家级","type":"英语","tags":["外研社","国才杯","英语演讲","英语写作"],"registrationStart":"2026-05-01","registrationEnd":"2026-10-31","competitionStart":"2026-10-15","competitionEnd":"2026-12-20","prize":"以官网公布为准","url":"https://uchallenge.unipus.cn/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-19","name":"全国大学生市场调查与分析大赛","organizer":"中国商业统计学会","level":"国家级","type":"综合","tags":["市调大赛","市场调查","数据分析","问卷设计"],"registrationStart":"2026-10-01","registrationEnd":"2026-10-31","competitionStart":"2027-03-01","competitionEnd":"2027-05-31","prize":"以官网公布为准","url":"http://www.china-cssc.org/","participants":"本科及专科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"gitcode-2085193638126485505","name":"中国电信星辰杯高校AI算子开发挑战赛","organizer":"中电信人工智能科技（北京）有限公司,华为","level":"企业级","type":"CANN / 算子","tags":["AI","算子"],"registrationStart":"2026-08-12","registrationEnd":"2026-10-31","competitionStart":"2026-08-12","competitionEnd":"2026-12-31","prize":"¥700,000","url":"https://competition.gitcode.com/competition/2085193638126485505/intro","participants":"412 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2114540823915638785","name":"2026 青年 AI 黑客松","organizer":"新京报、贝壳财经、北京市人工智能协会、中关村科学城公司","level":"企业级","type":"AI / 应用开发","tags":["AI","黑客松","AI创业者","青年创客"],"registrationStart":"2026-10-26","registrationEnd":"2026-10-31","competitionStart":"2026-10-26","competitionEnd":"2026-11-05","prize":"¥10,000","url":"https://competition.gitcode.com/competition/2114540823915638785/intro","participants":"16 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"huaweicloud-e707310c48104667b3ae5e5636683281","name":"华为嵌入式软件大赛-实物组","organizer":"华为技术有限公司-ICT BG-光产品线","level":"其他","type":"硬件与嵌入式","tags":["嵌入式","初赛"],"registrationStart":"2026-09-14","registrationEnd":"2026-11-04","competitionStart":"2026-09-14","competitionEnd":"2026-12-06","prize":"¥215,000","url":"https://developer.huaweicloud.com/competition/information/1300000313","participants":"175 人报名","source":"huaweicloud","sourceName":"华为云开发者大赛","sourceUrl":"https://developer.huaweicloud.com/competition/list","verified":true,"note":""},{"id":"gitcode-2097551679805423618","name":"昇腾AI行业创新大赛——2026电力行业算子专场","organizer":"国家人工智能应用中试基地（能源领域电力方向）、中国南方电网有限责任公司超高压输电公司、华为技术有限公司、全球计算联盟、杭州天宽科技有限公司","level":"企业级","type":"昇腾 / AI 算力","tags":["AI","昇腾","算子","能源领域电力方向","CANN典型场景"],"registrationStart":"2026-09-09","registrationEnd":"2026-11-06","competitionStart":"2026-09-09","competitionEnd":"2026-11-15","prize":"¥210,000","url":"https://competition.gitcode.com/competition/2097551679805423618/intro","participants":"673 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"huaweicloud-099d1ce2e260432eb298901d93a3f278","name":"openJiuwen智能体创新大赛","organizer":"华为技术有限公司","level":"其他","type":"AI 与算力","tags":["智能体","DEMO提交"],"registrationStart":"2026-09-23","registrationEnd":"2026-11-10","competitionStart":"2026-09-23","competitionEnd":"2027-01-31","prize":"¥385,000","url":"https://developer.huaweicloud.com/competition/information/1300000328","participants":"1136 人报名","source":"huaweicloud","sourceName":"华为云开发者大赛","sourceUrl":"https://developer.huaweicloud.com/competition/list","verified":true,"note":""},{"id":"gitcode-2115686908270383106","name":"昇腾 Triton 算子开发挑战赛","organizer":"昇腾、AtomGit AI","level":"企业级","type":"昇腾 / AI 算力","tags":["昇腾","算子","Triton 算子开发","性能优化"],"registrationStart":"2026-11-06","registrationEnd":"2026-11-14","competitionStart":"2026-11-06","competitionEnd":"2026-11-30","prize":"¥40,000","url":"https://competition.gitcode.com/competition/2115686908270383106/intro","participants":"339 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2119684851993116674","name":"昇腾Jev模型适配调优大赛","organizer":"Ascend,AtomGit AI","level":"企业级","type":"昇腾 / AI 算力","tags":["昇腾","Jev 开源决策模型","适配及调优"],"registrationStart":"2026-11-10","registrationEnd":"2026-11-22","competitionStart":"2026-11-10","competitionEnd":"2026-12-15","prize":"¥230,000","url":"https://competition.gitcode.com/competition/2119684851993116674/intro","participants":"441 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2118626642926731266","name":"Sports AI 体育应用创新黑客松","organizer":"AtomGit × 北京体育大学体育工程学院 × Sports AI 元启社","level":"企业级","type":"AI / 应用开发","tags":["AI","体育应用","高校黑客松"],"registrationStart":"2026-11-06","registrationEnd":"2026-11-23","competitionStart":"2026-11-06","competitionEnd":"2026-11-29","prize":"¥2,000","url":"https://competition.gitcode.com/competition/2118626642926731266/intro","participants":"8 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"huaweicloud-6ea3b3e8e3bd4ea08cfca220c944c8c2","name":"2026华为开发者大赛·智能体创新赛-西南赛区","organizer":"华为云计算技术有限公司","level":"其他","type":"AI 与算力","tags":["智能体","大赛"],"registrationStart":"2026-10-15","registrationEnd":"2026-11-24","competitionStart":"2026-10-15","competitionEnd":"2026-11-24","prize":"¥500,000","url":"https://developer.huaweicloud.com/competition/information/1300000354","participants":"698 人报名","source":"huaweicloud","sourceName":"华为云开发者大赛","sourceUrl":"https://developer.huaweicloud.com/competition/list","verified":true,"note":""},{"id":"hw-digix-hackathon-2026","name":"HarmonyOS 极客马拉松 · 2026","organizer":"华为开发者联盟","level":"国家级","type":"应用开发","tags":["HarmonyOS","极客马拉松","鸿蒙","Hackathon"],"registrationStart":"2026-10-20","registrationEnd":"2026-11-25","competitionStart":"2026-12-05","competitionEnd":"2026-12-07","prize":"奖金池与设备奖励，详见官网","url":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","participants":"","source":"harmonyos","sourceName":"华为开发者联盟 · HarmonyOS","sourceUrl":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","verified":false,"note":"华为赛事页为动态渲染，本条由人工收录，请以官网最新公告为准。"},{"id":"huaweicloud-a7bdf1caa60f485eab8c35ab0dee21e0","name":"2026华为开发者大赛·小红书Skill创新赛","organizer":"华为技术有限公司、小红书科技有限公司","level":"其他","type":"应用开发","tags":["大赛"],"registrationStart":"2026-10-14","registrationEnd":"2026-11-29","competitionStart":"2026-10-14","competitionEnd":"2026-11-29","prize":"¥500,000","url":"https://developer.huaweicloud.com/competition/information/1300000350","participants":"65910 人报名","source":"huaweicloud","sourceName":"华为云开发者大赛","sourceUrl":"https://developer.huaweicloud.com/competition/list","verified":true,"note":""},{"id":"tp-2","name":"“挑战杯”课外学术科技作品竞赛","organizer":"共青团中央、中国科协、教育部","level":"国家级","type":"创新创业","tags":["挑战杯","课外学术","科技作品","大挑"],"registrationStart":"2026-09-01","registrationEnd":"2026-11-30","competitionStart":"2027-03-01","competitionEnd":"2027-10-31","prize":"以官网公布为准","url":"http://www.tiaozhanbei.net/","participants":"全体高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-21","name":"华为ICT大赛","organizer":"华为技术有限公司","level":"国际级","type":"综合","tags":["华为","ICT","网络","云计算","AI","物联网"],"registrationStart":"2026-09-01","registrationEnd":"2026-11-30","competitionStart":"2027-01-01","competitionEnd":"2027-05-31","prize":"以官网公布为准","url":"https://e.huawei.com/cn/talent/ict-academy/#/contest","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-24","name":"全国大学生生命科学竞赛","organizer":"教育部生物科学类专业教指委","level":"国家级","type":"综合","tags":["生命科学","生物学","实验设计","科学探究"],"registrationStart":"2026-07-01","registrationEnd":"2026-11-30","competitionStart":"2027-03-01","competitionEnd":"2027-07-31","prize":"以官网公布为准","url":"http://www.culsc.cn/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"huaweicloud-400d315596294e4abc0a1cf69342b275","name":"华为开发者大赛：云启码道·智创甬城-华为云码道创新大赛","organizer":"华为技术有限公司&宁波城市职业技术学院","level":"其他","type":"编程算法","tags":["华为云","码道","赛事"],"registrationStart":"2026-11-19","registrationEnd":"2026-11-30","competitionStart":"2026-11-19","competitionEnd":"2026-11-30","prize":"以官网公布为准","url":"https://developer.huaweicloud.com/competition/information/1300000395","participants":"146 人报名","source":"huaweicloud","sourceName":"华为云开发者大赛","sourceUrl":"https://developer.huaweicloud.com/competition/list","verified":true,"note":""},{"id":"gitcode-2118596777972301826","name":"第四届 AIGC 数字素养大赛","organizer":"晋中信息学院、数字魔坊工作室","level":"企业级","type":"高校 / 社区","tags":["AI","AIGC","短视频/短剧赛","校园服务应用开发"],"registrationStart":"2026-11-09","registrationEnd":"2026-11-30","competitionStart":"2026-11-09","competitionEnd":"2026-11-30","prize":"¥5,000","url":"https://competition.gitcode.com/competition/2118596777972301826/intro","participants":"875 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2122944944307642369","name":"AI写码，你来写故事｜华为云码道 × AtomGit「体验官说」专业测评季！","organizer":"AtomGit","level":"企业级","type":"云 / AI 编程","tags":["华为云","码道","AI"],"registrationStart":"2026-11-17","registrationEnd":"2026-11-30","competitionStart":"2026-11-17","competitionEnd":"2026-11-30","prize":"¥9,000","url":"https://competition.gitcode.com/competition/2122944944307642369/intro","participants":"24 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2123350498095194114","name":"2026 CANN挑战赛（全国总决赛）","organizer":"CANN社区","level":"企业级","type":"CANN / 算子","tags":["CANN"],"registrationStart":"2026-11-20","registrationEnd":"2026-12-05","competitionStart":"2026-11-20","competitionEnd":"2026-12-05","prize":"¥315,000","url":"https://competition.gitcode.com/competition/2123350498095194114/intro","participants":"101 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2118537324714082306","name":"昇腾AI行业创新大赛-2026制造行业算子专场","organizer":"粤港澳大湾区国家技术创新中心、华为技术有限公司、全球计算联盟","level":"企业级","type":"昇腾 / AI 算力","tags":["AI","昇腾","算子"],"registrationStart":"2026-11-07","registrationEnd":"2026-12-07","competitionStart":"2026-11-07","competitionEnd":"2026-12-20","prize":"¥250,000","url":"https://competition.gitcode.com/competition/2118537324714082306/intro","participants":"550 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2125156057193627649","name":"昇腾模型推理性能优化大赛 -长上下文多轮会话专题","organizer":"昇腾、AtomGit AI","level":"企业级","type":"昇腾 / AI 算力","tags":["昇腾","长上下文","模型推理性能优化"],"registrationStart":"2026-11-25","registrationEnd":"2026-12-08","competitionStart":"2026-11-25","competitionEnd":"2026-12-15","prize":"¥140,000","url":"https://competition.gitcode.com/competition/2125156057193627649/intro","participants":"212 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"hw-digix-innovation-2026","name":"HarmonyOS 创新赛 · 2026","organizer":"华为开发者联盟","level":"国家级","type":"应用开发","tags":["HarmonyOS","鸿蒙","应用开发","创新赛"],"registrationStart":"2026-09-15","registrationEnd":"2026-12-10","competitionStart":"2026-12-20","competitionEnd":"2027-03-15","prize":"现金奖励与华为开发者资源扶持，详见官网","url":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","participants":"","source":"harmonyos","sourceName":"华为开发者联盟 · HarmonyOS","sourceUrl":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","verified":false,"note":"华为赛事页为动态渲染，本条由人工收录，请以官网最新公告为准。"},{"id":"gitcode-2122901781150560258","name":"码道创作季｜华为云码道技术创作活动正式开启，写技术博文赢现金激励！","organizer":"华为云码道","level":"企业级","type":"云 / AI 编程","tags":["华为云","码道"],"registrationStart":"2026-11-18","registrationEnd":"2026-12-14","competitionStart":"2026-11-18","competitionEnd":"2026-12-14","prize":"¥6,400","url":"https://competition.gitcode.com/competition/2122901781150560258/intro","participants":"26 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2122932083292315650","name":"码道创作季｜双赛道同步开赛，8 期周赛赢现金激励！（高校专场）","organizer":"华为云码道、AtomGit","level":"企业级","type":"云 / AI 编程","tags":["码道"],"registrationStart":"2026-11-18","registrationEnd":"2026-12-14","competitionStart":"2026-11-18","competitionEnd":"2026-12-14","prize":"¥6,000","url":"https://competition.gitcode.com/competition/2122932083292315650/intro","participants":"34 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2122938221450698753","name":"码道创作季｜双赛道同步开赛，8 期周赛赢现金激励！（开发者专场）","organizer":"华为云码道、AtomGit","level":"企业级","type":"云 / AI 编程","tags":["码道"],"registrationStart":"2026-11-18","registrationEnd":"2026-12-14","competitionStart":"2026-11-18","competitionEnd":"2026-12-14","prize":"¥6,000","url":"https://competition.gitcode.com/competition/2122938221450698753/intro","participants":"16 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2125589130878193666","name":"Model-Agent 贡献者大赛 · 第一季","organizer":"昇腾社区、AtomGit 社区","level":"企业级","type":"昇腾 / AI 算力","tags":["Agent","Model Agent","昇腾大赛","贡献赛"],"registrationStart":"2026-11-26","registrationEnd":"2026-12-14","competitionStart":"2026-11-26","competitionEnd":"2026-12-20","prize":"¥109,000","url":"https://competition.gitcode.com/competition/2125589130878193666/intro","participants":"86 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"huaweicloud-2d22631738f44686b61927c1cdb8ac62","name":"海客松 · FDE 应用场景开发赛","organizer":"海南海口市国家高新区 OPiece OPC 社区","level":"国家级","type":"应用开发","tags":["报名阶段"],"registrationStart":"2026-11-04","registrationEnd":"2026-12-15","competitionStart":"2026-11-04","competitionEnd":"2026-12-26","prize":"¥10,000","url":"https://developer.huaweicloud.com/competition/information/1300000366","participants":"106 人报名","source":"huaweicloud","sourceName":"华为云开发者大赛","sourceUrl":"https://developer.huaweicloud.com/competition/list","verified":true,"note":""},{"id":"gitcode-2125610775027773441","name":"昇腾 Model Agent 产品功能挑战赛","organizer":"昇腾、Atomgit","level":"企业级","type":"昇腾 / AI 算力","tags":["Agent","昇腾","功能大赛","Model Agent"],"registrationStart":"2026-11-26","registrationEnd":"2026-12-15","competitionStart":"2026-11-26","competitionEnd":"2026-12-20","prize":"¥460,000","url":"https://competition.gitcode.com/competition/2125610775027773441/intro","participants":"70 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"gitcode-2122945152518844418","name":"AI写码，你来写故事｜「零门槛上手」线上训练营开营，写博文出作品赢现金激励！","organizer":"华为云码道、AtomGit","level":"企业级","type":"云 / AI 编程","tags":["AI"],"registrationStart":"2026-11-17","registrationEnd":"2026-12-20","competitionStart":"2026-11-17","competitionEnd":"2026-12-20","prize":"¥7,350","url":"https://competition.gitcode.com/competition/2122945152518844418/intro","participants":"37 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"tp-6","name":"蓝桥杯全国软件和信息技术专业人才大赛","organizer":"工业和信息化部人才交流中心","level":"国家级","type":"编程算法","tags":["蓝桥杯","编程","算法","C/C++","Java","Python"],"registrationStart":"2026-10-01","registrationEnd":"2026-12-31","competitionStart":"2027-04-01","competitionEnd":"2027-05-31","prize":"以官网公布为准","url":"https://dasai.lanqiao.cn/","participants":"本科及专科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-8","name":"中国大学生服务外包创新创业大赛","organizer":"教育部、商务部","level":"国家级","type":"创新创业","tags":["服创大赛","服务外包","创新创业"],"registrationStart":"2026-11-01","registrationEnd":"2026-12-31","competitionStart":"2027-03-01","competitionEnd":"2027-05-31","prize":"以官网公布为准","url":"http://www.fwwb.org.cn/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-20","name":"RoboMaster机甲大师赛","organizer":"大疆创新","level":"国家级","type":"综合","tags":["机甲大师","机器人","RoboMaster","大疆","对战"],"registrationStart":"2026-10-01","registrationEnd":"2026-12-31","competitionStart":"2027-03-01","competitionEnd":"2027-07-31","prize":"以官网公布为准","url":"https://www.robomaster.com/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"hw-digix-campus-2026","name":"HarmonyOS 应用创新挑战赛 · 校园赛道","organizer":"华为开发者联盟","level":"国家级","type":"应用开发","tags":["HarmonyOS","校园赛道","鸿蒙","创新"],"registrationStart":"2026-11-01","registrationEnd":"2027-01-15","competitionStart":"2027-02-01","competitionEnd":"2027-04-30","prize":"奖金、证书与实习机会，详见官网","url":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","participants":"","source":"harmonyos","sourceName":"华为开发者联盟 · HarmonyOS","sourceUrl":"https://developer.huawei.com/consumer/cn/activity/digixActivity/","verified":false,"note":"华为赛事页为动态渲染，本条由人工收录，请以官网最新公告为准。"},{"id":"tp-5","name":"美国大学生数学建模竞赛(MCM/ICM)","organizer":"COMAP","level":"国际级","type":"数模","tags":["美赛","MCM","ICM","数学建模","国际赛"],"registrationStart":"2027-01-01","registrationEnd":"2027-02-01","competitionStart":"2027-02-13","competitionEnd":"2027-02-17","prize":"以官网公布为准","url":"https://www.comap.com/","participants":"全球高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"gitcode-2033832610321375233","name":"AtomGit码动四季开源同行征稿栏目","organizer":"AtomGit","level":"企业级","type":"开源征稿","tags":["开源","开源征稿","AtomCode","免费 Token"],"registrationStart":"2026-05-27","registrationEnd":"2027-02-19","competitionStart":"2026-05-27","competitionEnd":"2027-02-19","prize":"¥1,024","url":"https://competition.gitcode.com/competition/2033832610321375233/intro","participants":"113 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"tp-11","name":"全国大学生英语竞赛(NECCS)","organizer":"高等学校大学外语教学指导委员会","level":"国家级","type":"英语","tags":["英语竞赛","NECCS","大英赛"],"registrationStart":"2026-12-01","registrationEnd":"2027-03-15","competitionStart":"2027-04-11","competitionEnd":"2027-05-16","prize":"以官网公布为准","url":"https://www.neccs.com.cn/","participants":"全体在校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-14","name":"团体程序设计天梯赛(GPLT)","organizer":"教育部计算机类专业教指委","level":"国家级","type":"编程算法","tags":["天梯赛","团体程序设计","GPLT","PTA"],"registrationStart":"2026-12-01","registrationEnd":"2027-03-15","competitionStart":"2027-04-10","competitionEnd":"2027-04-25","prize":"以官网公布为准","url":"https://gplt.patest.cn/","participants":"本科及专科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-27","name":"全国大学生集成电路创新创业大赛","organizer":"工业和信息化部人才交流中心","level":"国家级","type":"综合","tags":["集成电路","IC","芯片","FPGA","半导体"],"registrationStart":"2026-12-01","registrationEnd":"2027-03-15","competitionStart":"2027-05-01","competitionEnd":"2027-08-31","prize":"以官网公布为准","url":"http://univ.ciciec.com/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-16","name":"全国周培源大学生力学竞赛","organizer":"中国力学学会","level":"国家级","type":"综合","tags":["周培源","力学竞赛","理论力学","材料力学"],"registrationStart":"2027-03-01","registrationEnd":"2027-03-31","competitionStart":"2027-05-15","competitionEnd":"2027-05-16","prize":"以官网公布为准","url":"http://zpy.cstam.org.cn/","participants":"本科及专科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-18","name":"蓝桥杯视觉艺术设计赛","organizer":"工业和信息化部人才交流中心","level":"国家级","type":"设计","tags":["蓝桥杯","视觉设计","UI设计","平面设计"],"registrationStart":"2026-10-01","registrationEnd":"2027-03-31","competitionStart":"2027-04-01","competitionEnd":"2027-05-31","prize":"以官网公布为准","url":"https://dasai.lanqiao.cn/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-15","name":"全国大学生节能减排社会实践与科技竞赛","organizer":"教育部高等教育司","level":"国家级","type":"综合","tags":["节能减排","环保","科技竞赛","社会实践"],"registrationStart":"2027-03-01","registrationEnd":"2027-04-15","competitionStart":"2027-05-01","competitionEnd":"2027-08-31","prize":"以官网公布为准","url":"http://www.jienengjianpai.org/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-17","name":"中国大学生计算机设计大赛","organizer":"教育部大学计算机课程教指委","level":"国家级","type":"设计","tags":["计算机设计","软件应用","数字媒体","微课"],"registrationStart":"2027-01-01","registrationEnd":"2027-04-30","competitionStart":"2027-05-01","competitionEnd":"2027-07-31","prize":"以官网公布为准","url":"https://www.jsjds.com.cn/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-23","name":"全国大学生化工设计竞赛","organizer":"中国化工学会","level":"国家级","type":"综合","tags":["化工设计","化工竞赛","Aspen","工艺流程"],"registrationStart":"2027-03-01","registrationEnd":"2027-04-30","competitionStart":"2027-05-01","competitionEnd":"2027-08-31","prize":"以官网公布为准","url":"http://iche.zju.edu.cn/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-9","name":"全国大学生电子设计竞赛","organizer":"教育部、工业和信息化部","level":"国家级","type":"综合","tags":["电赛","电子设计","嵌入式","模电数电"],"registrationStart":"2027-05-01","registrationEnd":"2027-05-31","competitionStart":"2027-08-07","competitionEnd":"2027-08-10","prize":"以官网公布为准","url":"https://www.nuedc-training.com.cn/","participants":"本科及专科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-25","name":"“西门子杯”中国智能制造挑战赛","organizer":"教育部自动化类专业教指委","level":"国家级","type":"综合","tags":["西门子杯","智能制造","PLC","自动化","工业控制"],"registrationStart":"2027-03-01","registrationEnd":"2027-05-31","competitionStart":"2027-07-01","competitionEnd":"2027-08-31","prize":"以官网公布为准","url":"http://www.siemenscup-cimc.org.cn/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-13","name":"全国大学生广告艺术大赛(大广赛)","organizer":"中国高等教育学会","level":"国家级","type":"设计","tags":["大广赛","广告设计","平面设计","视频创作"],"registrationStart":"2027-03-01","registrationEnd":"2027-06-30","competitionStart":"2027-07-01","competitionEnd":"2027-09-30","prize":"以官网公布为准","url":"http://www.sun-ada.net/","participants":"高校学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"tp-22","name":"全国大学生金相技能大赛","organizer":"教育部材料类专业教指委","level":"国家级","type":"综合","tags":["金相技能","材料科学","实验技能"],"registrationStart":"2027-04-01","registrationEnd":"2027-06-30","competitionStart":"2027-07-01","competitionEnd":"2027-08-31","prize":"以官网公布为准","url":"http://www.jxds.com.cn/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""},{"id":"gitcode-2057085957316272129","name":"2026年CANN算子天梯赛","organizer":"CANN开源社区","level":"企业级","type":"CANN / 算子","tags":["CANN","算子"],"registrationStart":"2026-05-21","registrationEnd":"2027-06-30","competitionStart":"2026-06-01","competitionEnd":"2027-06-30","prize":"¥174,000","url":"https://competition.gitcode.com/competition/2057085957316272129/intro","participants":"1190 人报名","source":"gitcode","sourceName":"GitCode 赛事平台","sourceUrl":"https://competition.gitcode.com/","verified":true,"note":""},{"id":"tp-10","name":"全国大学生机械创新设计大赛","organizer":"教育部机械基础课程教指委","level":"国家级","type":"综合","tags":["机械创新","机械设计","机电","工程"],"registrationStart":"2028-03-01","registrationEnd":"2028-05-31","competitionStart":"2028-07-20","competitionEnd":"2028-07-25","prize":"以官网公布为准","url":"http://www.umic.edu.cn/","participants":"本科学生","source":"thirdplayer","sourceName":"第三方赛事聚合","sourceUrl":"https://competition.thirdplayer.cn/","verified":true,"note":""}]}</script>
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 Doubleen<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<!-- 赛事脚本放在外部 CDN 脚本之前，避免 clipboard/valine 等慢资源阻塞首屏初始化 -->
+<script type="text/javascript" src="/js/competition.js?v=20261127"></script>
+<script type="text/javascript" src="/js/contests.js?v=20261128"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/Doubleen233/CDN@1.0","name":"Page1.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/Doubleen233/CDN@1.0","name":"Page1.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="/images/custom/avatar-shiori.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Doubleen's Blog</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/Doubleen233" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/5547217466" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/competition/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-trophy faa-shake" aria-hidden="true"></i>
+            赛事
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/contests/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-code faa-shake" aria-hidden="true"></i>
+            比赛
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>

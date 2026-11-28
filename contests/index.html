@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">编程比赛 | Doubleen&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="https://cdn.luogu.com.cn/upload/image_hosting/r1j6hg2h.png">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" href="/css/sharejs.css">
+  <link rel="stylesheet" href="/css/competition.css" media="all">
+  <link rel="stylesheet" href="/css/contests.css" media="all">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "Doubleen's Blog";
+  mashiro_option.author_name = "Doubleen's Blog";
+  mashiro_option.site_url = "https://doubleen233.github.io";
+  mashiro_option.v_appId = "";
+  mashiro_option.v_appKey = "";
+  mashiro_option.mathjax = "1";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "/images/custom/bg-rain.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop ">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://doubleen233.github.io">
+          <img src="/images/custom/avatar-shiori.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>为世界上所有的美好而战</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/Doubleen233" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/5547217466" target="_blank" class="social-github" title="sina">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="2475851832@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono"></span>
+            <span class="shironeko">Doubleen&#39;s Blog</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/competition/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-trophy faa-shake" aria-hidden="true"></i>
+                    赛事
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/contests/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-code faa-shake" aria-hidden="true"></i>
+                    比赛
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/about/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="pattern-center-blank"></div>
+<div id="content" class="site-content contests-content">
+  <div id="contests-app" class="contests-page" data-data-url="/contests/data.json">
+
+    <header class="ct-hero">
+      <div class="ct-hero-main">
+        <span class="ct-kicker"><i class="fa fa-code" aria-hidden="true"></i> CONTEST CALENDAR</span>
+        <h1>编程比赛</h1>
+        <p>聚合 Codeforces、AtCoder、LeetCode、牛客网的近期比赛。时间统一按北京时间显示，支持平台、状态和时间范围筛选。</p>
+        <div class="ct-hero-actions">
+          <a class="ct-btn ct-btn-primary" href="#ct-list"><i class="fa fa-calendar" aria-hidden="true"></i> 查看赛程</a>
+          <a class="ct-btn ct-btn-ghost" href="/competition/"><i class="fa fa-trophy" aria-hidden="true"></i> 综合赛事</a>
+        </div>
+      </div>
+      <div class="ct-hero-stats" aria-label="比赛统计">
+        <div class="ct-stat">
+          <strong id="ct-stat-upcoming">--</strong>
+          <span>即将开始</span>
+        </div>
+        <div class="ct-stat">
+          <strong id="ct-stat-running">--</strong>
+          <span>进行中</span>
+        </div>
+        <div class="ct-stat">
+          <strong id="ct-stat-week">--</strong>
+          <span>7 天内</span>
+        </div>
+        <div class="ct-stat ct-stat-wide">
+          <strong id="ct-stat-updated">--</strong>
+          <span>数据更新</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="ct-platform-bar" id="ct-platforms" aria-label="平台筛选"></div>
+
+    <div class="ct-toolbar">
+      <p class="ct-result" id="ct-result">正在加载比赛…</p>
+      <div class="ct-filters">
+        <label class="ct-field">
+          <span>状态</span>
+          <select id="ct-status">
+            <option value="all">全部状态</option>
+            <option value="upcoming">即将开始</option>
+            <option value="running">进行中</option>
+            <option value="ended">已结束</option>
+          </select>
+        </label>
+        <label class="ct-field">
+          <span>时间</span>
+          <select id="ct-range">
+            <option value="all">全部时间</option>
+            <option value="7">未来 7 天</option>
+            <option value="30">未来 30 天</option>
+            <option value="ended">最近结束</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="ct-list" id="ct-list" aria-live="polite"></div>
+
+    <div class="ct-empty" id="ct-empty" hidden>
+      <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+      <h2>没有符合条件的比赛</h2>
+      <p>换一个平台、状态或时间范围试试。</p>
+    </div>
+
+    <footer class="ct-page-foot">
+      <p><i class="fa fa-clock-o" aria-hidden="true"></i> 所有时间统一显示为北京时间（Asia/Shanghai），比赛时间以各平台官网为准。</p>
+      <p id="ct-sources" class="ct-sources"></p>
+    </footer>
+  </div>
+</div>
+<script id="contests-data" type="application/json">{"updatedAt":"2026-11-28T05:48:00.471Z","generatedBy":"tools/contests/fetch-contests.mjs","timezone":"Asia/Shanghai","sources":[{"id":"codeforces","name":"Codeforces","url":"https://codeforces.com/contests","status":"ok","count":14,"message":"抓取成功（14 条）"},{"id":"atcoder","name":"AtCoder","url":"https://atcoder.jp/contests/","status":"ok","count":16,"message":"抓取成功（16 条）"},{"id":"leetcode","name":"LeetCode","url":"https://leetcode.cn/contest/","status":"ok","count":9,"message":"抓取成功（9 条）"},{"id":"nowcoder","name":"牛客","url":"https://ac.nowcoder.com/acm/contest/vip-index","status":"ok","count":15,"message":"抓取成功（15 条）"}],"items":[{"id":"nowcoder-141882","platform":"nowcoder","platformName":"牛客","name":"牛客小白月赛139","url":"https://ac.nowcoder.com/acm/contest/141882","startTime":"2026-10-30T11:00:00.000Z","endTime":"2026-10-30T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"nowcoder.com"},{"id":"atcoder-abc482","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 482","url":"https://atcoder.jp/contests/abc482","startTime":"2026-10-31T12:00:00.000Z","endTime":"2026-10-31T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"codeforces-2278","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1131 (Div. 3)","url":"https://codeforces.com/contest/2278","startTime":"2026-10-31T14:35:00.000Z","endTime":"2026-10-31T16:50:00.000Z","durationMinutes":135,"rated":"ICPC","note":""},{"id":"leetcode-weekly-contest-526","platform":"leetcode","platformName":"LeetCode","name":"第 526 场周赛","url":"https://leetcode.cn/contest/weekly-contest-526/","startTime":"2026-11-01T02:30:00.000Z","endTime":"2026-11-01T04:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"nowcoder-142559","platform":"nowcoder","platformName":"牛客","name":"牛客周赛 Round 168","url":"https://ac.nowcoder.com/acm/contest/142559","startTime":"2026-11-01T11:00:00.000Z","endTime":"2026-11-01T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"牛客竞赛"},{"id":"codeforces-2283","platform":"codeforces","platformName":"Codeforces","name":"Educational Codeforces Round 196 (Rated for Div. 2)","url":"https://codeforces.com/contest/2283","startTime":"2026-11-04T14:45:00.000Z","endTime":"2026-11-04T16:45:00.000Z","durationMinutes":120,"rated":"ICPC","note":""},{"id":"nowcoder-142560","platform":"nowcoder","platformName":"牛客","name":"牛客练习赛159","url":"https://ac.nowcoder.com/acm/contest/142560","startTime":"2026-11-06T11:00:00.000Z","endTime":"2026-11-06T13:30:00.000Z","durationMinutes":150,"rated":"Rated","note":"nowcoder.com"},{"id":"codeforces-2284","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1132 (Div. 2)","url":"https://codeforces.com/contest/2284","startTime":"2026-11-06T14:35:00.000Z","endTime":"2026-11-06T16:50:00.000Z","durationMinutes":135,"rated":"Rated","note":""},{"id":"atcoder-abc483","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 483","url":"https://atcoder.jp/contests/abc483","startTime":"2026-11-07T12:00:00.000Z","endTime":"2026-11-07T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"leetcode-biweekly-contest-195","platform":"leetcode","platformName":"LeetCode","name":"第 195 场双周赛","url":"https://leetcode.cn/contest/biweekly-contest-195/","startTime":"2026-11-07T14:30:00.000Z","endTime":"2026-11-07T16:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"codeforces-2279","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1133 (Div. 1)","url":"https://codeforces.com/contest/2279","startTime":"2026-11-07T14:35:00.000Z","endTime":"2026-11-07T17:05:00.000Z","durationMinutes":150,"rated":"Rated","note":""},{"id":"codeforces-2280","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1133 (Div. 2)","url":"https://codeforces.com/contest/2280","startTime":"2026-11-07T14:35:00.000Z","endTime":"2026-11-07T17:05:00.000Z","durationMinutes":150,"rated":"Rated","note":""},{"id":"leetcode-weekly-contest-527","platform":"leetcode","platformName":"LeetCode","name":"第 527 场周赛","url":"https://leetcode.cn/contest/weekly-contest-527/","startTime":"2026-11-08T02:30:00.000Z","endTime":"2026-11-08T04:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"nowcoder-143199","platform":"nowcoder","platformName":"牛客","name":"牛客周赛 Round 169","url":"https://ac.nowcoder.com/acm/contest/143199","startTime":"2026-11-08T11:00:00.000Z","endTime":"2026-11-08T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"牛客竞赛"},{"id":"atcoder-agc079","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Grand Contest 079","url":"https://atcoder.jp/contests/agc079","startTime":"2026-11-08T12:00:00.000Z","endTime":"2026-11-08T15:30:00.000Z","durationMinutes":210,"rated":"Rated (2000 -)","note":""},{"id":"nowcoder-143824","platform":"nowcoder","platformName":"牛客","name":"牛客交互、通信新题型测试比赛","url":"https://ac.nowcoder.com/acm/contest/143824","startTime":"2026-11-10T11:00:00.000Z","endTime":"2026-11-10T13:00:00.000Z","durationMinutes":120,"rated":"","note":"nowcoder.com"},{"id":"codeforces-2290","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1134 (Div. 4)","url":"https://codeforces.com/contest/2290","startTime":"2026-11-12T14:35:00.000Z","endTime":"2026-11-12T16:50:00.000Z","durationMinutes":135,"rated":"ICPC","note":""},{"id":"nowcoder-143195","platform":"nowcoder","platformName":"牛客","name":"牛客小白月赛140","url":"https://ac.nowcoder.com/acm/contest/143195","startTime":"2026-11-13T11:00:00.000Z","endTime":"2026-11-13T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"nowcoder.com"},{"id":"atcoder-abc484","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 484","url":"https://atcoder.jp/contests/abc484","startTime":"2026-11-14T12:00:00.000Z","endTime":"2026-11-14T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"leetcode-weekly-contest-528","platform":"leetcode","platformName":"LeetCode","name":"第 528 场周赛","url":"https://leetcode.cn/contest/weekly-contest-528/","startTime":"2026-11-15T02:30:00.000Z","endTime":"2026-11-15T04:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"nowcoder-143406","platform":"nowcoder","platformName":"牛客","name":"牛客周赛 Round 170","url":"https://ac.nowcoder.com/acm/contest/143406","startTime":"2026-11-15T11:00:00.000Z","endTime":"2026-11-15T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"牛客竞赛"},{"id":"codeforces-2285","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1135 (Div. 2)","url":"https://codeforces.com/contest/2285","startTime":"2026-11-15T14:35:00.000Z","endTime":"2026-11-15T16:35:00.000Z","durationMinutes":120,"rated":"Rated","note":""},{"id":"nowcoder-143407","platform":"nowcoder","platformName":"牛客","name":"牛客挑战赛94","url":"https://ac.nowcoder.com/acm/contest/143407","startTime":"2026-11-20T11:00:00.000Z","endTime":"2026-11-20T14:00:00.000Z","durationMinutes":180,"rated":"Rated","note":"nowcoder.com"},{"id":"atcoder-abc485","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 485","url":"https://atcoder.jp/contests/abc485","startTime":"2026-11-21T12:00:00.000Z","endTime":"2026-11-21T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"leetcode-biweekly-contest-196","platform":"leetcode","platformName":"LeetCode","name":"第 196 场双周赛","url":"https://leetcode.cn/contest/biweekly-contest-196/","startTime":"2026-11-21T14:30:00.000Z","endTime":"2026-11-21T16:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"codeforces-2287","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1136 (Div. 1)","url":"https://codeforces.com/contest/2287","startTime":"2026-11-21T14:35:00.000Z","endTime":"2026-11-21T16:35:00.000Z","durationMinutes":120,"rated":"Rated","note":""},{"id":"codeforces-2288","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1136 (Div. 2)","url":"https://codeforces.com/contest/2288","startTime":"2026-11-21T14:35:00.000Z","endTime":"2026-11-21T16:35:00.000Z","durationMinutes":120,"rated":"Rated","note":""},{"id":"leetcode-weekly-contest-529","platform":"leetcode","platformName":"LeetCode","name":"第 529 场周赛","url":"https://leetcode.cn/contest/weekly-contest-529/","startTime":"2026-11-22T02:30:00.000Z","endTime":"2026-11-22T04:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"codeforces-2289","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1137 (Div. 2)","url":"https://codeforces.com/contest/2289","startTime":"2026-11-22T09:05:00.000Z","endTime":"2026-11-22T11:05:00.000Z","durationMinutes":120,"rated":"Rated","note":""},{"id":"nowcoder-144189","platform":"nowcoder","platformName":"牛客","name":"牛客周赛 Round 171","url":"https://ac.nowcoder.com/acm/contest/144189","startTime":"2026-11-22T11:00:00.000Z","endTime":"2026-11-22T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"牛客竞赛"},{"id":"atcoder-arc234","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Regular Contest++ 234","url":"https://atcoder.jp/contests/arc234","startTime":"2026-11-22T12:00:00.000Z","endTime":"2026-11-22T14:30:00.000Z","durationMinutes":150,"rated":"Rated (1600 - 2999)","note":""},{"id":"atcoder-ycpc2026","platform":"atcoder","platformName":"AtCoder","name":"YCPC 2026","url":"https://atcoder.jp/contests/ycpc2026","startTime":"2026-11-27T08:30:00.000Z","endTime":"2026-11-27T11:30:00.000Z","durationMinutes":180,"rated":"Unrated","note":""},{"id":"nowcoder-143482","platform":"nowcoder","platformName":"牛客","name":"牛客练习赛160","url":"https://ac.nowcoder.com/acm/contest/143482","startTime":"2026-11-27T11:00:00.000Z","endTime":"2026-11-27T13:30:00.000Z","durationMinutes":150,"rated":"Rated","note":"nowcoder.com"},{"id":"codeforces-2292","platform":"codeforces","platformName":"Codeforces","name":"Codeforces Round 1138 (Div. 3)","url":"https://codeforces.com/contest/2292","startTime":"2026-11-27T14:35:00.000Z","endTime":"2026-11-27T16:50:00.000Z","durationMinutes":135,"rated":"ICPC","note":""},{"id":"atcoder-abc486","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 486","url":"https://atcoder.jp/contests/abc486","startTime":"2026-11-28T12:00:00.000Z","endTime":"2026-11-28T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"leetcode-weekly-contest-530","platform":"leetcode","platformName":"LeetCode","name":"第 530 场周赛","url":"https://leetcode.cn/contest/weekly-contest-530/","startTime":"2026-11-29T02:30:00.000Z","endTime":"2026-11-29T04:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"nowcoder-142934","platform":"nowcoder","platformName":"牛客","name":"2026年CCPC新疆维吾尔自治区大学生程序设计竞赛","url":"https://ac.nowcoder.com/acm/contest/142934","startTime":"2026-11-29T04:00:00.000Z","endTime":"2026-11-29T09:00:00.000Z","durationMinutes":300,"rated":"","note":"新疆省赛"},{"id":"atcoder-ahc075","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Heuristic Contest 075","url":"https://atcoder.jp/contests/ahc075","startTime":"2026-11-29T10:00:00.000Z","endTime":"2026-11-29T14:00:00.000Z","durationMinutes":240,"rated":"Rated (All)","note":""},{"id":"nowcoder-144191","platform":"nowcoder","platformName":"牛客","name":"牛客周赛 Round 172","url":"https://ac.nowcoder.com/acm/contest/144191","startTime":"2026-11-29T11:00:00.000Z","endTime":"2026-11-29T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"牛客竞赛"},{"id":"nowcoder-144700","platform":"nowcoder","platformName":"牛客","name":"牛客小白月赛141","url":"https://ac.nowcoder.com/acm/contest/144700","startTime":"2026-12-04T11:00:00.000Z","endTime":"2026-12-04T13:00:00.000Z","durationMinutes":120,"rated":"Rated","note":"nowcoder.com"},{"id":"atcoder-abc487","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 487","url":"https://atcoder.jp/contests/abc487","startTime":"2026-12-05T12:00:00.000Z","endTime":"2026-12-05T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"leetcode-biweekly-contest-197","platform":"leetcode","platformName":"LeetCode","name":"第 197 场双周赛","url":"https://leetcode.cn/contest/biweekly-contest-197/","startTime":"2026-12-05T14:30:00.000Z","endTime":"2026-12-05T16:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"leetcode-weekly-contest-531","platform":"leetcode","platformName":"LeetCode","name":"第 531 场周赛","url":"https://leetcode.cn/contest/weekly-contest-531/","startTime":"2026-12-06T02:30:00.000Z","endTime":"2026-12-06T04:00:00.000Z","durationMinutes":90,"rated":"Rated","note":""},{"id":"codeforces-2291","platform":"codeforces","platformName":"Codeforces","name":"ICPC 2026 Online Challenge 2 powered by Huawei","url":"https://codeforces.com/contest/2291","startTime":"2026-12-08T11:00:00.000Z","endTime":"2026-12-22T11:00:00.000Z","durationMinutes":20160,"rated":"IOI","note":"未开始"},{"id":"codeforces-2282","platform":"codeforces","platformName":"Codeforces","name":"Kotlin Heroes: Episode 15","url":"https://codeforces.com/contest/2282","startTime":"2026-12-08T14:35:00.000Z","endTime":"2026-12-08T17:05:00.000Z","durationMinutes":150,"rated":"ICPC","note":"未开始"},{"id":"nowcoder-144502","platform":"nowcoder","platformName":"牛客","name":"【小茵杯】Concerine Cup 1","url":"https://ac.nowcoder.com/acm/contest/144502","startTime":"2026-12-11T11:00:00.000Z","endTime":"2026-12-11T15:00:00.000Z","durationMinutes":240,"rated":"","note":"nowcoder"},{"id":"atcoder-abc488","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Beginner Contest 488","url":"https://atcoder.jp/contests/abc488","startTime":"2026-12-12T12:00:00.000Z","endTime":"2026-12-12T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"atcoder-agc080","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Grand Contest 080","url":"https://atcoder.jp/contests/agc080","startTime":"2026-12-13T12:00:00.000Z","endTime":"2026-12-13T15:00:00.000Z","durationMinutes":180,"rated":"Rated (2400 -)","note":""},{"id":"codeforces-2293","platform":"codeforces","platformName":"Codeforces","name":"Educational Codeforces Round 197 (Rated for Div. 2)","url":"https://codeforces.com/contest/2293","startTime":"2026-12-14T14:35:00.000Z","endTime":"2026-12-14T16:35:00.000Z","durationMinutes":120,"rated":"ICPC","note":"未开始"},{"id":"atcoder-abc489","platform":"atcoder","platformName":"AtCoder","name":"UNIQUE VISION Programming Contest 2026 (ChristmasAtCoder Beginner Contest 489)","url":"https://atcoder.jp/contests/abc489","startTime":"2026-12-20T12:00:00.000Z","endTime":"2026-12-20T13:40:00.000Z","durationMinutes":100,"rated":"Rated (- 1999)","note":""},{"id":"atcoder-agc081","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Grand Contest 081","url":"https://atcoder.jp/contests/agc081","startTime":"2026-12-27T12:00:00.000Z","endTime":"2026-12-27T15:00:00.000Z","durationMinutes":180,"rated":"Rated (2400 -)","note":""},{"id":"atcoder-agc082","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Grand Contest 082","url":"https://atcoder.jp/contests/agc082","startTime":"2027-01-17T12:00:00.000Z","endTime":"2027-01-17T15:00:00.000Z","durationMinutes":180,"rated":"Rated (2400 -)","note":""},{"id":"atcoder-agc083","platform":"atcoder","platformName":"AtCoder","name":"AtCoder Grand Contest 083","url":"https://atcoder.jp/contests/agc083","startTime":"2027-01-24T12:00:00.000Z","endTime":"2027-01-24T15:00:00.000Z","durationMinutes":180,"rated":"Rated (2400 -)","note":""},{"id":"nowcoder-143814","platform":"nowcoder","platformName":"牛客","name":"2027牛客寒假算法基础集训营1","url":"https://ac.nowcoder.com/acm/contest/143814","startTime":"2027-01-27T06:00:00.000Z","endTime":"2027-01-27T10:00:00.000Z","durationMinutes":240,"rated":"Rated","note":"nowcoder.com"}]}</script>
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 Doubleen<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<!-- 赛事脚本放在外部 CDN 脚本之前，避免 clipboard/valine 等慢资源阻塞首屏初始化 -->
+<script type="text/javascript" src="/js/competition.js?v=20261127"></script>
+<script type="text/javascript" src="/js/contests.js?v=20261128"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/Doubleen233/CDN@1.0","name":"Page1.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/Doubleen233/CDN@1.0","name":"Page1.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="/images/custom/avatar-shiori.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">Doubleen's Blog</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/Doubleen233" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/5547217466" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/competition/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-trophy faa-shake" aria-hidden="true"></i>
+            赛事
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/contests/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-code faa-shake" aria-hidden="true"></i>
+            比赛
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/about/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
