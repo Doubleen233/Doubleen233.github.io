@@ -1,0 +1,257 @@
+<div class="pattern-center-blank"></div>
+<div id="content" class="site-content competition-content">
+  <div id="competition-app" class="competition-page" data-data-url="<%- url_for('/competition/data.json') %>">
+
+    <header class="cp-hero">
+      <div class="cp-hero-main">
+        <span class="cp-hero-kicker"><i class="fa fa-trophy" aria-hidden="true"></i> COMPETITION HUB</span>
+        <h1>赛事聚合</h1>
+        <p>汇集 HarmonyOS、华为云、GitCode 与公开赛事平台的竞赛信息。已过滤其他高校的校内赛，仅保留中山大学校内赛与公开赛事；默认按“即将截止优先”排序，支持列表、日历、级别、状态与类型筛选。</p>
+        <div class="cp-hero-actions">
+          <button type="button" class="cp-btn cp-btn-primary" id="cp-add-manual">
+            <i class="fa fa-plus" aria-hidden="true"></i> 手动录入
+          </button>
+          <button type="button" class="cp-btn cp-btn-ghost" id="cp-export">
+            <i class="fa fa-download" aria-hidden="true"></i> 导出 JSON
+          </button>
+        </div>
+      </div>
+      <div class="cp-hero-stats" aria-label="赛事统计">
+        <div class="cp-stat">
+          <strong id="cp-stat-open">--</strong>
+          <span>报名中</span>
+        </div>
+        <div class="cp-stat">
+          <strong id="cp-stat-soon">--</strong>
+          <span>7 天内截止</span>
+        </div>
+        <div class="cp-stat">
+          <strong id="cp-stat-total">--</strong>
+          <span>全部赛事</span>
+        </div>
+        <div class="cp-stat cp-stat-wide">
+          <strong id="cp-stat-updated">--</strong>
+          <span>数据更新</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="cp-sources" id="cp-sources" aria-label="数据来源"></div>
+
+    <div class="cp-viewbar">
+      <div class="cp-tabs" role="tablist" aria-label="视图切换">
+        <button type="button" class="cp-tab is-active" data-view="list" role="tab" aria-selected="true">
+          <i class="fa fa-th-large" aria-hidden="true"></i> 列表视图
+        </button>
+        <button type="button" class="cp-tab" data-view="calendar" role="tab" aria-selected="false">
+          <i class="fa fa-calendar" aria-hidden="true"></i> 日历视图
+        </button>
+      </div>
+      <p class="cp-viewbar-note"><i class="fa fa-info-circle" aria-hidden="true"></i> 默认按“即将截止优先”排序</p>
+    </div>
+
+    <!-- 列表视图 -->
+    <section class="cp-view" id="cp-list-view" aria-label="赛事列表">
+      <div class="cp-filter">
+        <div class="cp-filter-head">
+          <h2><i class="fa fa-filter" aria-hidden="true"></i> 筛选赛事</h2>
+          <button type="button" class="cp-link-btn" id="cp-reset">重置筛选</button>
+        </div>
+        <div class="cp-filter-grid">
+          <label class="cp-field cp-field-search">
+            <span>关键词</span>
+            <span class="cp-input-wrap">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="search" id="cp-search" placeholder="搜索赛事名称、主办方、标签…" autocomplete="off">
+            </span>
+          </label>
+          <label class="cp-field">
+            <span>时间范围</span>
+            <select id="cp-time">
+              <option value="all">全部时间</option>
+              <option value="7">7 天内截止</option>
+              <option value="30">30 天内截止</option>
+              <option value="90">90 天内截止</option>
+              <option value="month">本月截止</option>
+              <option value="ended">已截止报名</option>
+            </select>
+          </label>
+          <label class="cp-field">
+            <span>赛事级别</span>
+            <select id="cp-level"><option value="all">全部级别</option></select>
+          </label>
+          <label class="cp-field">
+            <span>赛事状态</span>
+            <select id="cp-status"><option value="all">全部状态</option></select>
+          </label>
+          <label class="cp-field">
+            <span>赛事类型</span>
+            <select id="cp-type"><option value="all">全部类型</option></select>
+          </label>
+        </div>
+        <div class="cp-active-filters" id="cp-active-filters" hidden></div>
+      </div>
+
+      <div class="cp-toolbar">
+        <p class="cp-result" id="cp-result">正在加载赛事…</p>
+        <label class="cp-sort">
+          排序
+          <select id="cp-sort">
+            <option value="default">即将截止优先</option>
+            <option value="deadline">报名截止从早到晚</option>
+            <option value="start">报名开始从早到晚</option>
+            <option value="name">名称 A → Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="cp-grid" id="cp-grid" aria-live="polite"></div>
+      <div class="cp-pagination" id="cp-pagination"></div>
+    </section>
+
+    <!-- 日历视图 -->
+    <section class="cp-view" id="cp-calendar-view" aria-label="赛事日历" hidden>
+      <div class="cp-calendar-toolbar">
+        <div class="cp-cal-nav">
+          <button type="button" class="cp-icon-btn" id="cp-cal-prev" aria-label="上个月">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </button>
+          <h2 id="cp-cal-title">----</h2>
+          <button type="button" class="cp-icon-btn" id="cp-cal-next" aria-label="下个月">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="cp-link-btn" id="cp-cal-today">回到本月</button>
+        </div>
+        <div class="cp-cal-filters">
+          <select id="cp-cal-level" aria-label="日历级别筛选"><option value="all">全部级别</option></select>
+          <select id="cp-cal-status" aria-label="日历状态筛选"><option value="all">全部状态</option></select>
+        </div>
+      </div>
+
+      <div class="cp-calendar-shell">
+        <div class="cp-cal-weekdays" aria-hidden="true">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+        </div>
+        <div class="cp-calendar" id="cp-calendar"></div>
+      </div>
+
+      <div class="cp-cal-legend">
+        <span><i class="cp-dot cp-dot-intl"></i>国际级</span>
+        <span><i class="cp-dot cp-dot-national"></i>国家级</span>
+        <span><i class="cp-dot cp-dot-provincial"></i>省级</span>
+        <span><i class="cp-dot cp-dot-school"></i>校级</span>
+        <span><i class="cp-dot cp-dot-enterprise"></i>企业级</span>
+        <span><i class="cp-dot cp-dot-other"></i>其他</span>
+        <span class="cp-legend-note">标记位置为报名截止日</span>
+      </div>
+
+      <div class="cp-agenda">
+        <div class="cp-agenda-head">
+          <h3><i class="fa fa-list-ul" aria-hidden="true"></i> 本月截止赛事</h3>
+          <span id="cp-agenda-count"></span>
+        </div>
+        <div class="cp-agenda-list" id="cp-agenda"></div>
+      </div>
+    </section>
+
+    <footer class="cp-page-foot">
+      <p><i class="fa fa-database" aria-hidden="true"></i> 数据由构建期脚本聚合，页面加载后不再发起跨域抓取。人工录入仅保存在当前浏览器 localStorage。</p>
+      <p>华为云与 GitCode 数据来自官方页面接口；HarmonyOS 来源暂未自动适配，当前使用人工收录。赛事时间与奖项请以主办方官网为准；标记“待核验”的条目来自人工收录。</p>
+    </footer>
+  </div>
+</div>
+
+<!-- 详情弹窗 -->
+<div class="cp-modal" id="cp-detail-modal" hidden>
+  <div class="cp-modal-backdrop" data-cp-close="detail"></div>
+  <div class="cp-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cp-detail-title">
+    <button type="button" class="cp-modal-close" data-cp-close="detail" aria-label="关闭">&times;</button>
+    <div class="cp-modal-body" id="cp-detail-body"></div>
+  </div>
+</div>
+
+<!-- 手动录入弹窗 -->
+<div class="cp-modal" id="cp-manual-modal" hidden>
+  <div class="cp-modal-backdrop" data-cp-close="manual"></div>
+  <div class="cp-modal-panel cp-modal-panel-form" role="dialog" aria-modal="true" aria-labelledby="cp-manual-title">
+    <button type="button" class="cp-modal-close" data-cp-close="manual" aria-label="关闭">&times;</button>
+    <div class="cp-modal-body">
+      <h2 id="cp-manual-title"><i class="fa fa-plus-circle" aria-hidden="true"></i> 手动录入赛事</h2>
+      <p class="cp-modal-desc">动态页面无法自动抓取时，可在这里补充。数据只保存在当前浏览器，导出 JSON 后可提交到 <code>tools/competition/manual.json</code>。</p>
+      <form id="cp-manual-form" class="cp-form">
+        <label class="cp-form-field cp-form-wide">
+          <span>赛事名称 <em>*</em></span>
+          <input type="text" name="name" required maxlength="120" placeholder="例如：HarmonyOS 创新赛 · 2026">
+        </label>
+        <label class="cp-form-field">
+          <span>主办方</span>
+          <input type="text" name="organizer" maxlength="80" placeholder="例如：华为开发者联盟">
+        </label>
+        <label class="cp-form-field">
+          <span>赛事级别</span>
+          <select name="level">
+            <option value="国家级">国家级</option>
+            <option value="国际级">国际级</option>
+            <option value="省级">省级</option>
+            <option value="校级">校级</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+        <label class="cp-form-field">
+          <span>赛事类型</span>
+          <input type="text" name="type" maxlength="40" placeholder="例如：应用开发">
+        </label>
+        <label class="cp-form-field">
+          <span>奖项</span>
+          <input type="text" name="prize" maxlength="100" placeholder="以官网公布为准">
+        </label>
+        <label class="cp-form-field">
+          <span>报名开始</span>
+          <input type="date" name="registrationStart">
+        </label>
+        <label class="cp-form-field">
+          <span>报名截止</span>
+          <input type="date" name="registrationEnd">
+        </label>
+        <label class="cp-form-field">
+          <span>比赛开始</span>
+          <input type="date" name="competitionStart">
+        </label>
+        <label class="cp-form-field">
+          <span>比赛结束</span>
+          <input type="date" name="competitionEnd">
+        </label>
+        <label class="cp-form-field cp-form-wide">
+          <span>详情链接</span>
+          <input type="url" name="url" maxlength="300" placeholder="https://">
+        </label>
+        <label class="cp-form-field cp-form-wide">
+          <span>标签</span>
+          <input type="text" name="tags" maxlength="120" placeholder="用逗号分隔，例如：HarmonyOS, 鸿蒙, 应用开发">
+        </label>
+        <div class="cp-form-actions cp-form-wide">
+          <button type="submit" class="cp-btn cp-btn-primary"><i class="fa fa-save" aria-hidden="true"></i> 保存到本地</button>
+          <button type="button" class="cp-btn cp-btn-ghost" id="cp-manual-export"><i class="fa fa-download" aria-hidden="true"></i> 导出 JSON</button>
+          <button type="button" class="cp-btn cp-btn-danger-ghost" id="cp-manual-clear"><i class="fa fa-trash" aria-hidden="true"></i> 清空本地录入</button>
+        </div>
+      </form>
+      <div class="cp-manual-list-wrap">
+        <h3>已录入 <span id="cp-manual-count">0</span> 条</h3>
+        <div class="cp-manual-list" id="cp-manual-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cp-tooltip" id="cp-tooltip" role="tooltip" hidden></div>
+<div class="cp-toast" id="cp-toast" role="status" aria-live="polite" hidden></div>
+
+<noscript>
+  <p class="cp-noscript">赛事列表需要启用 JavaScript 才能筛选和切换视图。你仍可直接访问各赛事官网获取信息。</p>
+</noscript>
+
+<%
+var competitionData = (site.data && site.data.competitions) || { items: [] };
+var competitionJson = JSON.stringify(competitionData).replace(/</g, '\\u003c');
+%>
+<script id="competition-data" type="application/json"><%- competitionJson %></script>

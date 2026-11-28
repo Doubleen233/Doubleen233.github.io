@@ -1,0 +1,68 @@
+name: Build and deploy blog
+
+on:
+  push:
+    branches: [source]
+  schedule:
+    - cron: '17 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Fetch competition data
+        run: npm run competition:fetch
+
+      - name: Verify primary sources
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const data = JSON.parse(fs.readFileSync('source/_data/competitions.json', 'utf8'));
+          const required = ['thirdplayer', 'huaweicloud', 'gitcode'];
+          const missing = required.filter((id) => {
+            const source = data.sources.find((item) => item.id === id);
+            return !source || source.status !== 'ok' || !source.count || /缓存/.test(source.message || '');
+          });
+          if (missing.length) {
+            console.error('Unavailable or cached sources: ' + missing.join(', ') + '; refusing to deploy partial data.');
+            process.exit(1);
+          }
+          console.log(`total=${data.items.length} ` + required.map((id) => {
+            const source = data.sources.find((item) => item.id === id);
+            return `${id}=${source.count}`;
+          }).join(' '));
+          NODE
+
+      - name: Build static site
+        run: npm run build:static
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy blog: ${{ github.run_id }}"
