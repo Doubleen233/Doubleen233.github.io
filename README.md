@@ -7,6 +7,8 @@ Based on the WordPress theme [Sakura](https://github.com/mashirozx/Sakura/) modi
 in development......
 
 > Competition module: see [COMPETITION_MODULE.md](./COMPETITION_MODULE.md) for the `/competition/` page, data sources, scraping, manual fallback, and deployment instructions.
+>
+> Programming contest calendar: see [CONTESTS_MODULE.md](./CONTESTS_MODULE.md) for the `/contests/` page aggregating Codeforces, AtCoder, LeetCode, and NowCoder.
 
 ![](https://wx3.sinaimg.cn/large/006bYVyvly1g069tuf42oj312w0m8ndq.jpg)
 

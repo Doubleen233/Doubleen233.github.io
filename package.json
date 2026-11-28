@@ -12,7 +12,9 @@
     "deploy": "node -r ./tools/compat-util-isdate.cjs ./node_modules/hexo/bin/hexo deploy",
     "clean": "node -r ./tools/compat-util-isdate.cjs ./node_modules/hexo/bin/hexo clean",
     "competition:fetch": "node tools/competition/fetch-competitions.mjs",
-    "competition:fetch:offline": "node tools/competition/fetch-competitions.mjs --offline"
+    "competition:fetch:offline": "node tools/competition/fetch-competitions.mjs --offline",
+    "contests:fetch": "node tools/contests/fetch-contests.mjs",
+    "contests:fetch:offline": "node tools/contests/fetch-contests.mjs --offline"
   },
   "dependencies": {
     "hexo": "^3.7.0",

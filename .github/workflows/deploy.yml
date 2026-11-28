@@ -53,6 +53,29 @@ jobs:
           }).join(' '));
           NODE
 
+      - name: Fetch programming contests
+        run: npm run contests:fetch
+
+      - name: Verify contest sources
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const data = JSON.parse(fs.readFileSync('source/_data/contests.json', 'utf8'));
+          const required = ['codeforces', 'atcoder', 'leetcode', 'nowcoder'];
+          const missing = required.filter((id) => {
+            const source = data.sources.find((item) => item.id === id);
+            return !source || source.status !== 'ok' || !source.count || /缓存/.test(source.message || '');
+          });
+          if (missing.length) {
+            console.error('Unavailable or cached contest sources: ' + missing.join(', ') + '; refusing to deploy partial data.');
+            process.exit(1);
+          }
+          console.log(`total=${data.items.length} ` + required.map((id) => {
+            const source = data.sources.find((item) => item.id === id);
+            return `${id}=${source.count}`;
+          }).join(' '));
+          NODE
+
       - name: Build static site
         run: npm run build:static
 

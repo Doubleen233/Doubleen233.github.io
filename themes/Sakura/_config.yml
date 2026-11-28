@@ -32,6 +32,7 @@ menus:
   #留言板: { path: /comment/, fa: fa-pencil-square-o faa-tada }
   友人帐: { path: /links/, fa: fa-link faa-shake }
   赛事: { path: /competition/, fa: fa-trophy faa-shake }
+  比赛: { path: /contests/, fa: fa-code faa-shake }
   #赞赏: { path: /donate/, fa: fa-heart faa-pulse }
   关于: { path: /about/, fa: fa-leaf faa-wrench
     #我？: {path: /about/, fa: fa-meetup}, 

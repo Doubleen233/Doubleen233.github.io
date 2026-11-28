@@ -7,6 +7,8 @@ hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-
 正在开发中......
 
 > 赛事聚合模块：`/competition/` 的页面结构、数据来源、抓取方式、人工兜底与部署说明见 [COMPETITION_MODULE.md](./COMPETITION_MODULE.md)。
+>
+> 编程比赛日历：`/contests/` 聚合 Codeforces、AtCoder、LeetCode、牛客网，说明见 [CONTESTS_MODULE.md](./CONTESTS_MODULE.md)。
 
 ![](https://wx3.sinaimg.cn/large/006bYVyvly1g069tuf42oj312w0m8ndq.jpg)
 
